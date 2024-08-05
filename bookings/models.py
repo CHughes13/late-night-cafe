@@ -5,30 +5,29 @@ from django.contrib.auth.models import User
 
 # User model
 class User(models.Model):
-    (Primary Key) id (int) # Unique user id
-    first_name (char) # User's first name
-    last_name (char) # User's last name
-    email (email) # User email address
-    password (char) # User password
-    is_admin (boolean) # Indicates if User is admin or not. Default set to false.
+    id = models.AutoField(primary_key = True) # Unique User id
+    first_name = models.CharField(max_length = 50) # User's first name, allows a max length of 50 characters 
+    last_name = models.CharField(max_length = 50) # User's last name, allows a max length of 50 characters 
+    email = models.EmailField(unique = True, max_length = 254) # Ensures User email address is used just once on the site & not too long
+    password = PasswordInput() # User password
+    is_admin = models.BooleanField(default=False) # Indicates if User is admin or not. Default set to false.
 
 
 # Model for table availability info
 class CafeTable(models.Model):
-    (Primary Key) CafeTable id (int) # Unique table id
-    num_of_seats (int) # Number of seats at a table (4 seats total)
-    is_available (boolean) # Indicates if a table is avliable or not. Default set to true.
+    id = models.AutoField(primary_key = True) # Unique table id
+    num_of_seats = models.IntegerField() # Number of seats at a table (4 seats total)
+    is_available = models.BooleanField(default=True) # Indicates if a table is avliable or not. Default set to true.
 
 
 # Model for making a booking
 class Booking(models.Model):
-    user = models.ForeignKey(User)
-    (Primary Key) Booking id (int) # Unique booking id
-    (ForeignKey, User) user_id (int) # Relationship to User model
-    (ForeignKey, CafeTable) CafeTable id (int) # Relationship to CafeTable model
-    booking_date (date) # Date when customer wants to book table - Mon-Sun
-    booking_time (time) # Time when customer wants to book table - only in 1 hour slots from 6pm-6am
-    num_of_guests (int) # Number of guests must be be min 1 and max 4
-    special_requests (text) # Textfield so customers can add allergy info, birthday treats, etc.
-    booking_created_at = models.DateTimeField(auto_now_add=True) # Adds date & time booking was made, can't change
-    booking_updated_at = models.DateTimeField(auto_now=True) # Adds date & time booking was amened, can change
+    id = models.AutoField(primary_key = True) # Unique booking id
+    user = models.ForeignKey(User) # Relationship to User model
+    table_booked = models.ForeignKey(CafeTable) # Relationship to CafeTable model
+    booking_date = models.DateField() # Date when customer wants to book table - Mon-Sun. Date & time seperate to allow for more flexibility for users to modify their booking.
+    booking_time = models.TimeField() # Time when customer wants to book table - only in 1 hour slots from 6pm-6am
+    num_of_guests = models.IntegerField() # Number of guests must be be min 1 and max 4
+    special_requests = models.TextField() # Textfield so customers can add allergy info, birthday treats, etc.
+    booking_created_at = models.DateTimeField(auto_now_add=True) # Adds date & time booking was made, can't be changed
+    booking_updated_at = models.DateTimeField(auto_now=True) # Adds date & time booking was amened, can be changed
