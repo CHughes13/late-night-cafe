@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-chughes13-latenightcafe-9hstosv71au.ws.codeinstitute-ide.net',
@@ -97,8 +97,7 @@ WSGI_APPLICATION = 'late_night_cafe.wsgi.application'
 # }
 
 DATABASES = {
-    'default':
-dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
