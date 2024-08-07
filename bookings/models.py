@@ -20,8 +20,8 @@ class CafeTable(models.Model):
 # Model for making a booking
 class Booking(models.Model):
     booking_id = models.AutoField(primary_key = True) # Unique booking id
-    user = models.ForeignKey(User, on_delete=models.CASCADE) # Relationship to User model. If user is deleted, booking will be deleted too.
-    table_booked = models.ForeignKey(CafeTable, on_delete=models.CASCADE) # Relationship to CafeTable model. If table is deleted, so will all bookings associated with that table.
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings') # Relationship to User model. If user is deleted, booking will be deleted too.
+    table_booked = models.ForeignKey(CafeTable, on_delete=models.CASCADE, related_name='bookings') # Relationship to CafeTable model. If table is deleted, so will all bookings associated with that table.
     booking_date = models.DateField(null = False, blank = False) # Date when customer wants to book table - Mon-Sun. Date & time seperate to allow for more flexibility for users to modify their booking. Field needs a value input. 
     booking_time = models.TimeField(null = False, blank = False) # Time when customer wants to book table - only in 1 hour slots from 6pm-6am. Field needs a value input.
     NUM_GUESTS_CHOICES = [(i, i) for i in range(1, 5)] # Limits number of guests from min 1 to max 4
