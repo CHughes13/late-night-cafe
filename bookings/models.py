@@ -7,7 +7,7 @@ from django.utils import timezone # Pulls in default timezone info which is Euro
 
 # Model for table availability info
 class CafeTable(models.Model):
-    id = models.AutoField(primary_key = True) # Unique table id
+    cafe_table_id = models.AutoField(primary_key = True) # Unique table id
     is_available = models.BooleanField(default = True) # Indicates if a table is available or not. Default set to true.
 
     """
@@ -19,7 +19,7 @@ class CafeTable(models.Model):
 
 # Model for making a booking
 class Booking(models.Model):
-    id = models.AutoField(primary_key = True) # Unique booking id
+    booking_id = models.AutoField(primary_key = True) # Unique booking id
     user = models.ForeignKey(User, on_delete=models.CASCADE) # Relationship to User model. If user is deleted, booking will be deleted too.
     table_booked = models.ForeignKey(CafeTable, on_delete=models.CASCADE) # Relationship to CafeTable model. If table is deleted, so will all bookings associated with that table.
     booking_date = models.DateField(null = False, blank = False) # Date when customer wants to book table - Mon-Sun. Date & time seperate to allow for more flexibility for users to modify their booking. Field needs a value input. 
@@ -27,5 +27,5 @@ class Booking(models.Model):
     NUM_GUESTS_CHOICES = [(i, i) for i in range(1, 5)] # Limits number of guests from min 1 to max 4
     num_of_guests = models.IntegerField(choices=NUM_GUESTS_CHOICES, default=1) # Default number of guests is set to 1. Field needs a value input. 
     special_requests = models.TextField(null = True, blank = True) # Textfield so customers can add allergy info, birthday treats, etc. Optional field.
-    booking_created_at = models.DateTimeField(auto_now_add = True, default=timezone.now) # Adds Europe/London date & time booking was first made, can't be changed
-    booking_updated_at = models.DateTimeField(auto_now = True, default=timezone.now) # Adds Europe/London date & time booking was amened, can be changed
+    booking_created_at = models.DateTimeField(auto_now_add = True) # Sets timestamp only when the record is created
+    booking_updated_at = models.DateTimeField(auto_now = True) # Updates timestamp every time the record is saved
