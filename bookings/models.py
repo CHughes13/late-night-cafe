@@ -4,25 +4,18 @@ from django.utils import timezone # Pulls in default timezone info which is Euro
 
 # Create your models here.
 
-# User model
-class User(models.Model):
-    id = models.AutoField(primary_key = True) # Unique User id
-    first_name = models.CharField(max_length = 50, null = False, blank = False) # User's first name, allows a max length of 50 characters. Field needs a value input. 
-    last_name = models.CharField(max_length = 50, null = False, blank = False) # User's last name, allows a max length of 50 characters. Field needs a value input. 
-    email = models.EmailField(unique = True, max_length = 254, null = False, blank = False) # Ensures User email address is used just once on the site & not too long. Field needs a value input. 
-    password = models.CharField(max_length = 128, null = False, blank = False) # User password. Field needs a value input. 
-    is_admin = models.BooleanField(default = False) # Indicates if User is admin or not. Default set to false.
-
 
 # Model for table availability info
 class CafeTable(models.Model):
     id = models.AutoField(primary_key = True) # Unique table id
+    is_available = models.BooleanField(default = True) # Indicates if a table is available or not. Default set to true.
+
+    """
+    Commenting out - all tables have 4 seats for simplicity. Future feature could incorporate variying seat numbers
     num_of_seats = models.PositiveSmallIntegerField(null = False, blank = False) # Number of seats at a table (4 seats total). Field needs a value input. 
     #potentially add (validators=[MinValueValidator(0)]) at the end as field cannot be negative, but 0 would be allowed.
-   
-    is_available = models.BooleanField(default = True) # Indicates if a table is available or not. Default set to true.
-   
-
+   """
+    
 
 # Model for making a booking
 class Booking(models.Model):
