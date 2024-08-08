@@ -34,7 +34,7 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings') # Relationship to User model. If user is deleted, booking will be deleted too.
     table_booked = models.CharField(choices=TABLE_CHOICES, default="1") # Lists choice of tables in cafe.
     booking_date = models.DateField(null = False, blank = False) # Date when customer wants to book table - Mon-Sun. Date & time separate to allow for more flexibility for users to modify their booking. Field needs a value input. 
-    booking_time = models.CharField(max_length = 6, choices=TIMESLOT_CHOICES, default="6 PM") # Time when customer wants to book table (1 hour slots from 6pm-6am).
+    booking_time = models.CharField(max_length = 6, choices=TIMESLOT_CHOICES, default="6 PM") # Lists bookable timeslots (1 hour slots from 6pm-6am).
     num_of_guests = models.IntegerField(choices=NUM_GUESTS_CHOICES, default=1) # Default number of guests is set to 1. Field needs a value input. 
     special_requests = models.TextField(null = True, blank = True) # Textfield so customers can add allergy info, birthday treats, etc. Optional field.
     booking_created_at = models.DateTimeField(auto_now_add = True) # Sets timestamp only when the record is created
@@ -47,4 +47,4 @@ class Booking(models.Model):
         verbose_name = "Booking"
         verbose_name_plural = "Bookings"
         ordering = ["booking_date", "booking_time", "table_booked"] # Shows bookings in chronological order (by date, then time, then table number)
-        unique_together = ["booking_date", "booking_time", "table_booked", "user"] # Ensures that the same table can't be book on the same date/time
+        unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be book on the same date/time
