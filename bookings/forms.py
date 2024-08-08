@@ -4,9 +4,10 @@ from django.contrib.auth.models import User # Import Django's built-in User
 from .models import Booking # Import local Booking model
 
 # Form users fill in to register and sign up to the site
-class UserCreationForm(generic.UserCreationForm):
+class UserCreationForm(UserCreationForm):
     class Meta:
         model = User
+        fields = ["email", "username", "password1", "password2"]
 
 # Form users fill in to create a booking
 class BookingForm(forms.ModelForm):
