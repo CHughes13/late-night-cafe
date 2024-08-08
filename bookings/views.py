@@ -11,9 +11,9 @@ class HomePage(generic.TemplateView):
 
 # Sign Up Page View
 class SignUpView(generic.CreateView):
-    # form_class = UserCreationForm
+    form_class = UserCreationForm
     template_name = "sign_up.html"
-    # success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
+    success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
 
 
 # Login View = using Django's built-in LoginView
@@ -36,7 +36,7 @@ class BookingListUser(generic.ListView):
 # Make a Booking View
 class BookingCreateView(generic.CreateView):
     model = Booking
-    # form_class = BookingForm
+    form_class = BookingForm
     template_name = "bookings/booking_form.html"
     success_url = "/" # Will redirect to homepage or another page after booking
 
