@@ -7,10 +7,10 @@ from .models import Booking # Import local Booking model
 class UserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["email", "username", "password1", "password2"]
+        fields = ["first_name", "last_name", "email", "username", "password1", "password2"]
 
 # Form users fill in to create a booking
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ["booking date", "booking_time", "table_booked"]
+        fields = ["booking date", "booking_time", "table_booked", "num_of_guests"]
