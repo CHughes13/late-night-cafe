@@ -28,7 +28,7 @@ class Booking(models.Model):
         ("05:00", "5 AM"),
     ]
 
-    NUM_GUESTS_CHOICES = [(i, i) for i in range(1, 5)] # Limits number of guests from min 1 to max 4
+    NUM_GUESTS_CHOICES = [(i, i) for i in range(1, 5)] # Limits number of guests from min 1 to max 4. Futureproofing in case more tables are added with varying seat numbers.
 
     booking_id = models.AutoField(primary_key = True) # Unique booking id
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings') # Relationship to User model. If user is deleted, booking will be deleted too.
@@ -47,4 +47,4 @@ class Booking(models.Model):
         verbose_name = "Booking"
         verbose_name_plural = "Bookings"
         ordering = ["booking_date", "booking_time", "table_booked"] # Shows bookings in chronological order (by date, then time, then table number)
-        unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be book on the same date/time
+        unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be booked on the same date/time
