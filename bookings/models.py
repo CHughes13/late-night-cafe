@@ -10,11 +10,6 @@ class CafeTable(models.Model):
     cafe_table_id = models.AutoField(primary_key = True) # Unique table id
     is_available = models.BooleanField(default = True) # Indicates if a table is available or not. Default set to true.
 
-    """
-    Commenting out - all tables have 4 seats for simplicity. Future feature could incorporate variying seat numbers
-    num_of_seats = models.PositiveSmallIntegerField(null = False, blank = False) # Number of seats at a table (4 seats total). Field needs a value input. 
-    #potentially add (validators=[MinValueValidator(0)]) at the end as field cannot be negative, but 0 would be allowed.
-   """
     def __str__(self):
         return f"Table {self.cafe_table_id} {'is available' if self.is_available else 'is not available'}" # Method returns a string showing if a table is available or not
 
