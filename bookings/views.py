@@ -1,12 +1,15 @@
-from django.shortcuts import render
-from django.views import generic
-from .models import Booking
+from django.views import generic # Import Django's built-in generic views
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
+from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
+from django.urls import reverse_lazy # Handles URL redirection
+from .models import Booking # Import local Booking model
+from .forms import BookingForm #Import local Booking Form
+from django.shortcuts import render # function is a shortcut for rendering a template and returning an HTTP response
 
 
 # Homepage View
 class HomePage(generic.TemplateView):
-    template_name = "index.html" # Do I need to change this to "home.html"?
+    template_name = "index.html" # Homepage
 
 
 # Sign Up Page View
