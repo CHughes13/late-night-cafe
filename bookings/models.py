@@ -11,8 +11,12 @@ class CafeTable(models.Model):
     is_available = models.BooleanField(default = True) # Indicates if a table is available or not. Default set to true.
 
     def __str__(self):
-        return f"Table {self.cafe_table_id} {'is available' if self.is_available else 'is not available'}" # Method returns a string showing if a table is available or not
+        return f"Table {self.cafe_table_id} {"is available" if self.is_available else "is not available"}" # Method returns a string showing if a table is available or not
 
+    class Meta:
+        verbose_name = "Cafe Table"
+        verbose_name_plural = "Cafe Tables"
+        ordering = ["-is_available", "cafe_table_id"] # Shows available tables first, then by cafe_table_id
 
 
 # Model for making a booking
@@ -30,3 +34,9 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking for {self.user} ({self.booking_id}) on {self.booking_date} at {self.booking_time} for {self.num_of_guests}." # Method returns a string summarising a table booking
+
+    class Meta:
+        verbose_name = "Booking"
+        verbose_name_plural = "Bookings"
+        ordering = ["booking_date", "booking_time"] # Shows bookings in chronological order (by date then time)
+        unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be book on the same date/time
