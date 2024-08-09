@@ -6,7 +6,7 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>Luna Lounge</title>
+    <title>Latte Night Cafe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
@@ -33,8 +33,7 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="{% url 'home' %}">
-                <span class="brand">Luna L<span
-                        class="yellow-o">o</span>unge<span class="thin">|late night cafe</span></span></a>
+                <span class="brand">Latte Night Cafe</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +41,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Aligns navbar to the right of the browser -->
+                <ul class="navbar-nav ms-auto text-end mb-2 mb-lg-0"> <!-- Aligns navbar text to the right of the browser -->
 
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
