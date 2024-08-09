@@ -22,10 +22,26 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 
 ![Trello Project Board](assets/images/Hack-&-Cheese-Project-Board.png)
 
+## UX/UI
+### Site Goals
+The goal of Latte Night Cafe is ....
+
+###User Stories
+As a site user/customer:
+- I want to do this because this
+- I want to do this because this
+- I want to do this because this
+- I want to do this because this
+
+As the site administrator:
+- I want to do this because this
+- I want to do this because this
+- I want to do this because this
+- I want to do this because this
 
 ## Initial Planning Stage - Wireframes
 
-Here are the initial wireframes for the Latte Night Cafe application, along with screen shots of the initial design. These provide a visual outline of the planned layout and functionality.
+Here are the initial wireframes for the Latte Night Cafe application (created using Balsamiq), along with screen shots of the initial design. These provide a visual outline of the planned layout and functionality.
 
 #### Desktop Homepage
 ![Welcome Screen Wireframe](assets/images/-choices-desktop-wireframes-welcome-screen.png)
