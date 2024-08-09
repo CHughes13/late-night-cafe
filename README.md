@@ -1,131 +1,187 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Latte Night Cafe
+INSERT FINAL SCREENSHOT OF HOMEPAGE HERE on desktop, tablet and mobile - ask Mo where he got the template from
 
-Welcome Christina Hughes,
+## Overview
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is a table booking system for Latte Night Cafe, a late night cafe. Usually only clubs or pubs are open after dark, but not everyone is a party animal. This is a venue for the night owls who want to relax with their friends, or even get some work done, in at a calm and cosy place during the evening and early hours of the morning. Offering customers the chance to book a space allows them to secure a quiet nook for themselves in the early hours of the morning when traditional cafes are normally closed. It also gives them peace of mind that they're in a safe space away from loud music and alcohol-fuelled antics so they can unwind.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+This web application was created and built by Christina Hughes - [GitHub](https://github.com/CHughes13), [LinkedIn](https://www.linkedin.com/in/christina-hughes-50233041/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Technologies Used
 
-`python3 -m http.server`
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5.3.3
+- Django
+- [Balsamiq](https://balsamiq.com/) used to create wireframes
+- ChatGPT and Blackbox AI used throughout for coding advice and inspiration
+- [Jamboard](https://jamboard.google.com/d/1XjsnzAiuQ_O_WgiFDCjuUN0aw7v927GWzUWEdflyDuE/viewer?ts=667ec8a4&pli=1&f=1) (digital interactive whiteboard)
+- [Trello](https://trello.com/b/CIy6Ngeo/hackathon-2-hack-cheese-project-board) (Project board)
 
-A blue button should appear to click: _Make Public_,
+![Trello Project Board](assets/images/Hack-&-Cheese-Project-Board.png)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## Initial Planning Stage - Wireframes
 
-A blue button should appear to click: _Make Public_,
+Here are the initial wireframes for the Latte Night Cafe application, along with screen shots of the initial design. These provide a visual outline of the planned layout and functionality.
 
-Another blue button should appear to click: _Open Browser_.
+#### Desktop Homepage
+![Welcome Screen Wireframe](assets/images/-choices-desktop-wireframes-welcome-screen.png)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Mobile Homepage
+![Mobile View Wireframes](assets/images/-choices-phone-wireframes.png)
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Initial Design
+These are screenshots of the project around the beginning of development:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![Welcome screen screenshot](assets/images/cheesy-choices-initial-design-welcome-screen.png)
+-
+![Quiz screen screenshot](assets/images/cheesy-choices-initial-design-quiz-screen.png)
+-
+![Alert message screenshot](assets/images/cheesy-choices-initial-design-alert-message.png)
+-
+![incorrect screen screenshot](assets/images/cheesy-choices-initial-design-incorrect-screen.png)
 
-### Connecting your Mongo database
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
 
-------
 
-## Release History
+## Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Existing Features
+- __Username Input__
+  - Allows user to enter their name. Gives the quiz a more personalised touch. Quiz will not start without a username – the user will be prompted via an alert to select a username.
 
-**June 18, 2024,** Add Mongo back into template
+- __Timer Option__
+  - Offers the user the option play a timed quiz mode which will increase the quiz difficulty level. This can be toggled on/off at on the home screen.
+![screenshot_2024-07-04_at_13 21 36](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/1d3ed57a-99df-49cd-b155-38a76f05dfd3)
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+- __Multiple Choice Answer Buttons__
+  - When the user is presented with a question they are provided with four multiple choice buttons to choose from. When the user hovers their mouse cursor over the answer, the button changes to a lighter colour. When an answer is selected, it will either: turn green if it is correct, or it will turn red if it is incorrect and the button displaying the correct answer will turn green.
+![screenshot_2024-07-04_at_13 20 54_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/0eda82ea-44fb-4d64-998d-3a12d6fe61ec)
 
-**May 28 2024:** Fix Mongo and Links installs
+- __Home Button__ 
+  - This button will allow the user to easily navigate back to the home screen and replay the quiz.
 
-**April 26 2024:** Update node version to 16
+- __Score Tracker__ 
+  - This scoreboard keeps track of the users correct answers, incorrect answers, and their best streak (number of questions they have answered correctly in a row). Tracks and displays scores dynamically, with visual feedback on answers.
+ 
+- __Result Screen Message__ 
+  - Personal message based on the score you get.
+![screenshot_2024-07-04_at_13 22 40_360](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/d0847c74-6fa0-4530-a5fc-58124b0985ac)
 
-**September 20 2023:** Update Python version to 3.9.17.
+- __Responsive Design__ 
+  - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop.
+![screenshot_2024-07-04_132148_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/f1bce015-c6bb-4873-9527-5ce40feca079)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Footer__ 
+  - Footer section includes links to the relevant social media sites for Latte Night Cafe To allow for easy navigation, the links open in a new tab.
+  - Copyright line includes year of publication and the creator. This allows users to see how up to date the information on the web application is.
+  - Features at the bottom of the page throughout (and has a matching colour theme with other elements on the site), this lets the user know they're still on the same webpage.
+  - The footer is important as it encourages the user to interact and stay connected with Latte Night Cafe on other social media platforms.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Screenshot 2024-07-04 132836](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/64b519bc-a391-43fc-8dbd-5656333bf441)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Features Left to Implement
+- __Difficulty Settings__ 
+  - To give users the choice of quiz difficulty to make the quiz more fun and challenging (this would add replay value). To make the quiz easier, the user could start with 3 answers to choose from instead of 4. Introducing a 50/50 lifeline option that could be used once – this would grey out half of the answers, leaving 1 correct and 1 incorrect.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- __Get More Questions Using an API__ 
+  - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- __More Categories__ 
+  - Currently the quiz is focused on general knowledge. Branching out to other specific categories adds more entertainment for the user. For example, a dedicated geography-based quiz or one focused on literature.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- __Image with Questions__ 
+  - Adding an image underneath each question to create a more appealing and attention-grabbing. Image will relate to the question so the user will be able to easily identify what the theme is and what the question is about.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- __Image on Results Screen__ 
+  - Adding an image on the Results Screen alongside the personalised message will add a more polished look.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- __High Score Table__ 
+  - A table which would display the user's name and score. This would encourage the user to keep playing to gain a new personal best. The user could also challenge their friends and compete against them for the best high score.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing and Debugging
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Validator Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- HTML
+  - Passed through the official W3C validator:
+  ![screenshot_2024-07-04_at_13 13 55_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/e2202700-ee23-481d-92ea-9375cf842ddd)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- CSS
+  - Passed through the Jigsaw validator successfully:
+  ![screenshot_2024-07-04_131444_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/99bbee67-aa6d-464d-8a0c-890201499550)
 
-------
+- JavaScript
+  - Passed through online JavaScript Validator:
+![screenshot_2024-07-04_131623_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/a0d41777-c972-47da-9f2d-7e9d35609cc9)
 
-## FAQ about the uptime script
+- Website Optimization
+  - Still need to pass through [Google Lighthouse](TBA)
 
-**Why have you added this script?**
+### Bugs Fixed
+- __Background Image Missing from Deployed Version__ 
+  - **Issue:** While the background image appeared during checks on the IDE, when the website was deployed the background was a grey box instead.
+  - **Fix:** Suspected it was a filepath issue. Checked the code. There was indeed a sneaky / at the front of the path. Removed this and background image appeared on deployed version.
+ 
+![screenshot_2024-07-03_at_14 37 34_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/42fe2091-ea66-4e76-bfae-6602d157469c)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- __Scoreboard Counter Registering All Mouse Clicks__ 
+  - **Issue:** When excessively clicking on the quiz answers multiple times, the Correct/Incorrect counters would increment by the total number of clicks on that button, rather than just once. This also allowed multiple buttons to be selected if they were clicked fast enough and would then change colour.
+  - **Fix?** We did this.
+  
+ ![screenshot_2024-07-03_192242_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/e3462be3-95cd-4567-a04a-f2adb1b037b4)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- __Start Quiz Button Not Working__ 
+  - **Issue:** When the Start Quiz button was clicked instead of the quiz screen appearing, the home screen remained.
+  - **Fix:** Console.log the function make sure that the "click" button was actually firing. Tested this in Chrome Dev Tools using Console. It was firing.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+### Unfixed Bugs
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- __Footer Overlapping Content__ 
+  - **Issue:** The Footer would overlap the content on the page. This resulted in the Home Button and Scoreboard being hidden underneath the Footer (particularly on mobile screen size).
+  - **How would we fix it?:** Use Chrone Dev Tools to play around with padding/margin/positioning to find out why the Footer is behaving this way.
+    
+ ![screenshot_2024-07-03_173006_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/0a609fa3-5a1d-46f5-add2-7b11dba47dfc)
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Setup and Running the Application
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+1. Clone the repository to your local machine or download the HTML, CSS, and JavaScript files.
+2. Open the HTML file in a web browser to start the application.
+3. Enter your name, opt for a timed challenge if desired, and click 'Start Quiz' to begin.
+4. Answer the questions by clicking on one of the choices.
+5. View your score, correct answers, incorrect answers, and best streak at any time during the session.
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Credits
+__Resources Used and Consulted:__ 
+- [ChatGPT](https://openai.com/chatgpt/) used throughout for coding advice and inspiration.
+- [Blackbox AI] (https://www.blackbox.ai/) used throughout for coding advice and inspiration.
+- [Font Awesome](https://fontawesome.com/) for the social media icons in footer.
+- [Favicon.io](https://favicon.io/) - online favicon generator used to draw favicon.
+- Angela Yu's [The Complete 2024 Web Development Bootcamp course on Udemy](https://www.udemy.com/course/the-complete-web-development-bootcamp) - reviewed videos to brush up on Python.
+- [Stack Overflow](https://stackoverflow.com/) for troubleshooting and understanding coding concepts.
+- Background image from WEBSITE.
 
----
+__Inspiration Drawn From:__ 
+- Insert websiten name here - [https://www.buzzfeed.com/hanifahrahman/disney-dog-quiz]
 
-Happy coding!
+__Special Thanks To:__ 
+- [Spencer Barriball](https://github.com/5pence/demodemo/blob/main/assets/js/script.js)
+- Code Institute's Subject Matter Expert Kevin
+- Code Institute's Coding Coach Martin
+- Code Institute's Coding Bootcamp Tutor Lewis
+- Code Institute's Cohort Facilitator David
+- Everyone in the April 2024 WW Bootcamp
+- Ian Stokes
+- Christopher Hughes
+- Sebastian Hughes
