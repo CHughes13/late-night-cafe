@@ -9,7 +9,8 @@ from django.shortcuts import render # function is a shortcut for rendering a tem
 
 # Homepage View
 class HomePage(generic.TemplateView):
-    template_name = "index.html" # Homepage
+    template_name = "bookings/index.html" # Homepage
+    paginate_by = 6
 
 
 # Sign Up Page View
