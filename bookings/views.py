@@ -1,3 +1,4 @@
+from django.shortcuts import render, get_object_or_404
 from django.views import generic # Import Django's built-in generic views
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
 from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
