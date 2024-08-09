@@ -32,8 +32,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Luna L<span
-                        class="red-o">o</span>unge<span class="thin">|late night cafe</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <span class="brand">Luna L<span
+                        class="yellow-o">o</span>unge<span class="thin">|late night cafe</span></span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,8 +42,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Aligns navbar to the right of the browser -->
+
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="#">Home</a>
@@ -75,9 +76,6 @@
 
                 </ul>
 
-                <span class="navbar-text text-muted">
-                    from sunset to sunrise
-                </span>
             </div>
         </div>
     </nav>
