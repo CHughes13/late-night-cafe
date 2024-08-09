@@ -3,7 +3,7 @@ from django.contrib.auth.views import LoginView  # Import Django's built-in logi
 from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
-from .forms import BookingForm #Import local Booking Form
+from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserCreationForm and Booking Form
 from django.shortcuts import render # function is a shortcut for rendering a template and returning an HTTP response
 
 
@@ -14,7 +14,7 @@ class HomePage(generic.TemplateView):
 
 # Sign Up Page View
 class SignUpView(generic.CreateView):
-    form_class = UserCreationForm
+    form_class = CustomUserCreationForm
     template_name = "sign_up.html"
     success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
 
