@@ -1,6 +1,9 @@
 
 /* Test code below - delete after test */
 
+/*
+
+
 body {
     background-color: #346dde;
 }
@@ -9,7 +12,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #F6C02C;
 }
 
 .thin {
@@ -21,11 +24,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #223D68;
 }
 
 .main-bg {
-    background-color: #346dde;
+    background-color: #F7F0E4;
 }
 
 .card {
@@ -158,3 +161,6 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Navbar */
+
