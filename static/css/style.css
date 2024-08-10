@@ -52,9 +52,10 @@ body {
 
 /* FOOTER*/
 
-.footer .row {
-
+.footer {
+    margin: auto 0;
 }
+
 .footer ul {
     list-style: none;
     padding-left: 0;
