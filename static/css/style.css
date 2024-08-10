@@ -1,3 +1,10 @@
+/* GENERAL STYLES */
+
+.dark-bg {
+    background-color: #223D68;
+}
+
+
 /* NAVBAR */
 
 .nav-link:hover {
@@ -12,9 +19,12 @@
 
 
 /* FOOTER*/
-.dark-bg {
-    background-color: #223D68;
+.footer ul {
+    list-style: none;
+    padding-left: 0;
 }
+
+
 
 /*Social media icons*/
 .social-media-icon i {
