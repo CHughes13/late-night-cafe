@@ -52,10 +52,6 @@ body {
 
 /* FOOTER*/
 
-.footer {
-    margin: auto 0;
-}
-
 .footer ul {
     list-style: none;
     padding-left: 0;
@@ -67,10 +63,17 @@ body {
 
 
 /*Social media icons*/
+.social-media-icon {
+    display: flex;
+    justify-content: center; /* Centers items horizontally within the container */
+    align-items: center; /* Vertically center-aligns items within the container */
+    flex-wrap: wrap; /* Allows icons to wrap to the next line if needed */
+}
+
 .social-media-icon i {
     color: #ffffff;
     font-size: 1.5rem;
-    margin: 0 5%;
+    margin: 0 1vw; /* Adds space between icons using viewport width */
 }
 
 .social-media-icon i:hover {
