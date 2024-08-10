@@ -186,6 +186,9 @@ __Resources Used and Consulted:__
 - [Favicon.io](https://favicon.io/) - online favicon generator used to draw favicon.
 - Angela Yu's [The Complete 2024 Web Development Bootcamp course on Udemy](https://www.udemy.com/course/the-complete-web-development-bootcamp) - reviewed videos to brush up on Python.
 - [Stack Overflow](https://stackoverflow.com/) for troubleshooting and understanding coding concepts.
+- [MDN web docs] (https://developer.mozilla.org/) for helpful guides on all things coding.
+- [W3Schools] (https://www.w3schools.com/) for helpful guides on all things coding.
+- [Bootstrap] (https://getbootstrap.com/) for docs about Bootstrap.
 - Background image from WEBSITE.
 
 __Inspiration Drawn From:__ 
