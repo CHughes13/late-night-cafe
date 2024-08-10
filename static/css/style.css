@@ -1,16 +1,28 @@
-
-/* Test code below - delete after test */
-
-/* HEAD styles*/
-
-/* Navigation bar styles*/
+/* Navbar styles*/
 
 .nav-link:hover {
-    text-decoration: underline; /* Text in navbar gets underline when mouse hovers over it*/
+    text-decoration: underline;
+    /* Text in navbar gets underline when mouse hovers over it*/
 }
 
 .nav-link.active {
-    color: #F6C02C !important; /* Text color stands out from the rest of the nav bar so it's clear what page the user is on */
+    color: #F6C02C !important;
+    /* Text color stands out from the rest of the nav bar so it's clear what page the user is on */
+}
+
+
+/* Footer styles*/
+
+/*Social media icons*/
+.social-media-icon i {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.social-media-icon i:hover {
+    color: #F6C02C;
+    /* Icon colour changes to yellow when mouse hovers over it */
 }
 
 
@@ -179,4 +191,3 @@ body {
 */
 
 /* Navbar */
-
