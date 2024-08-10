@@ -10,6 +10,12 @@
     margin: 10px;
 }
 
+.align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* NAVBAR */
 
 .nav-link:hover {
