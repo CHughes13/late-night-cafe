@@ -1,7 +1,28 @@
 /* GENERAL STYLES */
 
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-bg {
+    background-color: #ffffff;
+}
+
 .dark-bg {
     background-color: #223D68;
+}
+
+.light-bg {
+    background-color: #ffffff;
+}
+
+
+
+body {
+    background-color: #e02a85;
 }
 
 .icon-style {
@@ -59,9 +80,7 @@
 
 /* Other styles - delete what you don't need*/
 
-body {
-    background-color: #346dde;
-}
+
 
 .brand {
     font-family: Rubik, sans-serif;
@@ -74,15 +93,11 @@ body {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
-}
 
 
 
-.main-bg {
-    background-color: #F7F0E4;
-}
+
+
 
 
 /*
@@ -218,5 +233,3 @@ body {
 }
 
 */
-
-/* Navbar */
