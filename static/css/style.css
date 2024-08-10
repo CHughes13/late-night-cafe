@@ -49,6 +49,10 @@ body {
     /* Text color stands out from the rest of the nav bar so it's clear what page the user is on */
 }
 
+/* Button that toggles navbar when in mobile view */
+.navbar-toggler {
+    background-color: #F6C02c;
+}
 
 /* FOOTER*/
 
