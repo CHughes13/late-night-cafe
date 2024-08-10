@@ -1,4 +1,4 @@
-/* Navbar styles*/
+/* NAVBAR */
 
 .nav-link:hover {
     text-decoration: underline;
@@ -11,7 +11,10 @@
 }
 
 
-/* Footer styles*/
+/* FOOTER*/
+.dark-bg {
+    background-color: #223D68;
+}
 
 /*Social media icons*/
 .social-media-icon i {
@@ -26,7 +29,7 @@
 }
 
 
-
+/* Other styles - delete what you don't need*/
 
 body {
     background-color: #346dde;
@@ -47,9 +50,7 @@ body {
     background-color: #fff;
 }
 
-.dark-bg {
-    background-color: #223D68;
-}
+
 
 .main-bg {
     background-color: #F7F0E4;
