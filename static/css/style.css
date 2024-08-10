@@ -4,6 +4,11 @@
     background-color: #223D68;
 }
 
+.icon-style {
+    color: #F6C02C;
+    font-size: 1.5rem;
+    margin: 10px;
+}
 
 /* NAVBAR */
 
@@ -19,6 +24,10 @@
 
 
 /* FOOTER*/
+
+.footer .row {
+
+}
 .footer ul {
     list-style: none;
     padding-left: 0;
