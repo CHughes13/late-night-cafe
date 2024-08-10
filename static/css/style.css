@@ -1,6 +1,17 @@
 
 /* Test code below - delete after test */
 
+/* Navigation bar styles*/
+
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link.active {
+    color: #F6C02C !important; /* Text color stands out from the rest of the nav bar so it's clear what page the user is on */
+}
+
 
 body {
     background-color: #346dde;
