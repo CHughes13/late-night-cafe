@@ -24,13 +24,16 @@
     padding-left: 0;
 }
 
+.footer h3 {
+    color: #F6C02C;
+}
 
 
 /*Social media icons*/
 .social-media-icon i {
     color: #ffffff;
     font-size: 1.5rem;
-    margin: 10px;
+    margin: 0 5%;
 }
 
 .social-media-icon i:hover {
