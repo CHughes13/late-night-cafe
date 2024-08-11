@@ -10,8 +10,10 @@ from django.shortcuts import render # function is a shortcut for rendering a tem
 # Create your views here
 
 class BookingList(generic.ListView):
-    queryset = Booking.objects.all()
-    template_name = "booking_list.html"
+    # queryset = Booking.objects.all()
+    template_name = "bookings/booking_list.html"
+    # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
+    queryset = Booking.objects.all().order_by("-booking_created_at")
 
 # Homepage View
 #class HomePage(generic.TemplateView):

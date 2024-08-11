@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Views Part 1</title>
+    <title>Booking List</title>
 </head>
 
 <!--Update these fields with correct info later--> 
 <body>
     {% for booking in object_list %}
-    <h1>Booking Details for {{booking_id}}</h1>
-    <p> Date: {{booking.date}} </p>
-    <p> Time: {{booking.Time}} </p>
-    <p> For Table: {{booking.table_num}}</p>
-    <p> By: {{booking.user}} </p>
-    <p> {{test}} </p>
+    <h1>Booking Details for {{booking.booking_id}}</h1>
+    <h2>{{ booking.booking_created_at }}</h2>
+    <p> Date: {{ booking.booking_date }} </p>
+    <p> Time: {{ booking.booking_time }} </p>
+    <p> For Table {{ booking.table_booked }} for {{ booking.num_of_guests }}</p>
+    <p> By: {{ booking.booking.user }} </p>
+    <p>{{booking.special_requests}}</p>
+    <p> {{ test }} </p>
+    
     {% endfor %}
 </body>
 
