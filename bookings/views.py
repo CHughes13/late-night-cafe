@@ -9,8 +9,8 @@ from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserC
 # Create your views here
 
 class BookingList(generic.ListView):
-    template_name = "bookings/index.html"
     queryset = Booking.objects.all().order_by("booking_created_at")
+    template_name = "bookings/index.html"
     # queryset = Booking.objects.all()
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
 
