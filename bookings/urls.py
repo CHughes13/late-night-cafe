@@ -2,7 +2,7 @@ from . import views
 from django.urls import path
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
 
-
+#URL pattern order should go from the least to the most specific to ensure that only one path matches.
 urlpatterns = [
     # This is what is shown on the Homepage
     path("", views.BookingList.as_view(), name="home"),
