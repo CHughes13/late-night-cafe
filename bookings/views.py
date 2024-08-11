@@ -1,19 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404 # function is a shortcut for rendering a template and returning an HTTP response
 from django.views import generic # Import Django's built-in generic views
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
 from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserCreationForm and Booking Form
-from django.shortcuts import render # function is a shortcut for rendering a template and returning an HTTP response
 
 # Create your views here
 
 class BookingList(generic.ListView):
-    # queryset = Booking.objects.all()
-    template_name = "bookings/booking_list.html"
-    # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
+    template_name = "bookings/index.html"
     queryset = Booking.objects.all().order_by("booking_created_at")
+    # queryset = Booking.objects.all()
+    # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
 
 # Homepage View
 #class HomePage(generic.TemplateView):
