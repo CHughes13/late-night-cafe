@@ -1,174 +1,19 @@
-/* GENERAL STYLES */
-
-/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.main-bg {
-    background-color: #ffffff;
-}
-
-.dark-bg {
-    background-color: #223D68;
+body {
+    background-color: #F9FAFC;
 }
 
 .light-bg {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
-
-
-body {
-    background-color: #e02a85;
-}
-
-.icon-style {
-    color: #F6C02C;
-    font-size: 1.5rem;
-    margin: 10px;
-}
-
-.align-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* NAVBAR */
-
-.nav-link:hover {
-    text-decoration: underline;
-    /* Text in navbar gets underline when mouse hovers over it*/
-}
-
-.nav-link.active {
-    color: #F6C02C !important;
-    /* Text color stands out from the rest of the nav bar so it's clear what page the user is on */
-}
-
-/* Button that toggles navbar when in mobile view */
-.navbar-toggler {
-    background-color: #F6C02c;
-}
-
-/* FOOTER*/
-
-.footer ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer h3 {
-    color: #F6C02C;
-}
-
-
-/*Social media icons*/
-.social-media-icon {
-    display: flex;
-    justify-content: center; /* Centers items horizontally within the container */
-    align-items: center; /* Vertically center-aligns items within the container */
-    flex-wrap: wrap; /* Allows icons to wrap to the next line if needed */
-}
-
-.social-media-icon i {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 0 1vw; /* Adds space between icons using viewport width */
-}
-
-.social-media-icon i:hover {
-    color: #F6C02C;
-    /* Icon colour changes to yellow when mouse hovers over it */
-}
-
-
-/* Other styles - delete what you don't need*/
-
-
-
-.brand {
-    font-family: Rubik, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #F6C02C;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-
-
-
-
-
-
-
-/*
 .card {
     border: none;
     background-color: transparent;
 }
 
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-}
-
 .scale {
     width: 100%;
     height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
 }
 
 .post-link {
@@ -179,16 +24,6 @@ body {
 .post-link:hover,
 .page-link {
     color: #E84610;
-}
-
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
 }
 
 .btn-signup,
@@ -239,5 +74,3 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
-
-*/
