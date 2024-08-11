@@ -8,12 +8,12 @@
     <title>Views Part 1</title>
 </head>
 
+<!--Update these fields with correct info later--> 
 <body>
-    <h1>Posts list</h1>
-    {% for post in object_list %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.excerpt}}</p>
-    <p>Author: {{post.author}}</p>
+    <h1>Bookings list</h1>
+    {% for booking in object_list %}
+    <p>User: {{booking.user}}</p>
+    <p>Test</p>
     {% endfor %}
 </body>
 

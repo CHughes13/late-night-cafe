@@ -10,7 +10,8 @@ from django.shortcuts import render # function is a shortcut for rendering a tem
 # Create your views here
 
 class BookingList(generic.ListView):
-    model = Booking
+    queryset = Booking.objects.all()
+    template_name = "booking_list.html"
 
 # Homepage View
 #class HomePage(generic.TemplateView):
