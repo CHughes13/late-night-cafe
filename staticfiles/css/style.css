@@ -1,42 +1,9 @@
-/* h1 {
-    color: red;
-}
-
-h2 {
-    color: blue;
-} */
-
-/* Test code below - delete after test */
-
 body {
-    background-color: #346dde;
-}
-
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
-
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
+    background-color: #F9FAFC;
 }
 
 .light-bg {
     background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #346dde;
 }
 
 .card {
@@ -44,61 +11,27 @@ body {
     background-color: transparent;
 }
 
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-}
-
 .scale {
     width: 100%;
     height: auto;
 }
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+/* Dark Navbar */
+.navbar-dark {
+    background-color: #223D68; /* Dark background color for the navbar */
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
+.navbar-dark .navbar-nav .nav-link {
+    color: #F6C02C; /* Highlight color for nav links */
+    font-size: 1.2rem;
 }
 
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #F6C02C; /* Keep the active nav link highlighted */
 }
 
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
+.navbar-dark .navbar-brand {
+    color: #F6C02C; /* Highlight color for brand text */
 }
 
 .post-link {
@@ -111,16 +44,7 @@ body {
     color: #E84610;
 }
 
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
+/* Buttons */
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -133,6 +57,25 @@ body {
     color: #23BBBB;
 }
 
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+/* Links */
 .link {
     color: #23BBBB;
     text-decoration: none;
@@ -144,28 +87,36 @@ body {
     text-decoration: underline;
 }
 
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
 .faded {
     color: rgb(172, 175, 175);
 }
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Footer */
+.footer {
+    background-color: #223D68; /* Dark background color for footer */
+    color: #F6C02C; /* Text color in the footer */
+}
+
+.footer h3,
+.footer ul,
+.footer p {
+    color: #F6C02C; /* Highlight color for footer text */
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-icon a {
+    color: #F6C02C; /* Social media icon color */
+    font-size: 1.5rem;
+}
+
+.social-media-icon a:hover {
+    color: #FFF; /* White color on hover */
 }
