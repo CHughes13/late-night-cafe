@@ -16,6 +16,24 @@ body {
     height: auto;
 }
 
+/* Dark Navbar */
+.navbar-dark {
+    background-color: #223D68; /* Dark background color for the navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #F6C02C; /* Highlight color for nav links */
+    font-size: 1.2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #F6C02C; /* Keep the active nav link highlighted */
+}
+
+.navbar-dark .navbar-brand {
+    color: #F6C02C; /* Highlight color for brand text */
+}
+
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -26,6 +44,7 @@ body {
     color: #E84610;
 }
 
+/* Buttons */
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -38,6 +57,25 @@ body {
     color: #23BBBB;
 }
 
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+/* Links */
 .link {
     color: #23BBBB;
     text-decoration: none;
@@ -49,28 +87,36 @@ body {
     text-decoration: underline;
 }
 
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
 .faded {
     color: rgb(172, 175, 175);
 }
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Footer */
+.footer {
+    background-color: #223D68; /* Dark background color for footer */
+    color: #F6C02C; /* Text color in the footer */
+}
+
+.footer h3,
+.footer ul,
+.footer p {
+    color: #F6C02C; /* Highlight color for footer text */
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-icon a {
+    color: #F6C02C; /* Social media icon color */
+    font-size: 1.5rem;
+}
+
+.social-media-icon a:hover {
+    color: #FFF; /* White color on hover */
 }
