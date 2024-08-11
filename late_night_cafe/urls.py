@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
+# URL pattern order should go from the least to the most specific to ensure that only one path matches.
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("", include("bookings.urls"), name="bookings-urls"),

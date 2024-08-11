@@ -13,7 +13,7 @@ class BookingList(generic.ListView):
     # queryset = Booking.objects.all()
     template_name = "bookings/booking_list.html"
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
-    queryset = Booking.objects.all().order_by("-booking_created_at")
+    queryset = Booking.objects.all().order_by("booking_created_at")
 
 # Homepage View
 #class HomePage(generic.TemplateView):
