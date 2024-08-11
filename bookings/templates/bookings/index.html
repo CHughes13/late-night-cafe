@@ -1,12 +1,30 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %} --> 
 
 {% block content %}
 
 <!-- index.html content starts here -->
+<!--Update these fields with correct info later--> 
+<body>
+    {% for booking in object_list %}
+    <h1>Booking Details for {{booking.booking_id}}</h1>
+    <h2>{{ booking.booking_created_at }}</h2>
+    <p> Date: {{ booking.booking_date }} </p>
+    <p> Time: {{ booking.booking_time }} </p>
+    <p> For Table {{ booking.table_booked }} for {{ booking.num_of_guests }}</p>
+    <p> By: {{ booking.booking.user }} </p>
+    <p>{{booking.special_requests}}</p>
+    <p> {{ test }} </p>
+    
+    {% endfor %}
+</body>
+
+
+ <!-- commenting out for now as for blog and not for booking system
+
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        Blog Entries Column 
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
@@ -47,22 +65,7 @@
     </nav>
     {% endif %}
 </div>
-
+-->
+ 
 <!-- index.html content ends here -->
 {% endblock %}
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <h1>Homepage</h1>
-</body>
-</html> -->

@@ -1,9 +1,4 @@
-{% load static %}
-
 {% url 'home' as home_url %}
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -24,8 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
 </head>
 
@@ -38,7 +32,7 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <!-- Icons included in the home link for a better user experience -->
 
-                <!-- Insert Font Awesome moon icon -->
+                <!-- Insert Font Awesome moon icon  -->
                 <i class="fas fa-moon icon-style"></i>
 
                 <!-- Stylised text of the name of the cafe -->
@@ -47,81 +41,39 @@
                 <!-- Insert Font Awesome coffee icon -->
                 <i class="fas fa-mug-hot icon-style"></i>
 
-            </a>
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span
+                                    class="red-o">o</span>de<span class="thin">|star</span></span></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                        aria-current="page" href="#">Home</a>
+                                </li>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                            </ul>
 
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav ms-auto text-end mb-2 mb-lg-0">
-                    <!-- Right-aligns navbar text. -->
+                        </div>
+                    </div>
+                </nav>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"
-                            aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
+                <main class="flex-shrink-0 main-bg">
 
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
+                    {% block content %}
+                    <!-- Content Goes here -->
+                    {% endblock content %}
 
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == '/sign_up/' %}active{% endif %}"
-                            href="{% url 'sign_up' %}">Sign Up</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == '/login/' %}active{% endif %}"
-                            href="{% url 'login' %}">Login</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == '/admin/bookings/' %}active{% endif %}"
-                            href="{% url 'admin_bookings' %}">Admin Bookings</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == '/user/bookings/' %}active{% endif %}"
-                            href="{% url 'user_bookings' %}">Your Bookings</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == '/make_a_booking/' %}active{% endif %}"
-                            href="{% url 'make_a_booking' %}">Make a Booking</a>
-                    </li>
-
-                </ul>
-
-            </div>
+                </main>
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
-
-        {% block content %}
-        <!-- Content Goes here -->
-
-        <h1>This is h1</h1>
-        <h2>This is h2</h2>
-        <p>This is a paragraph</p>
-
-        {% endblock content %}
-
-    </main>
 
     <!-- Footer -->
     <div class="container-fluid align-items-center" style="padding: 0;">
@@ -198,8 +150,6 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 
-    <!-- JavaScript source-->
-    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
