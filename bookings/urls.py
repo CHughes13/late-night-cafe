@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView  # Import Django's built-in logi
 
 
 urlpatterns = [
-
+    # This is what is shown on the Homepage
     path("", views.BookingList.as_view(), name="home"),
 ]
     # Homepage

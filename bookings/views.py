@@ -7,42 +7,46 @@ from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserCreationForm and Booking Form
 from django.shortcuts import render # function is a shortcut for rendering a template and returning an HTTP response
 
+# Create your views here
+
+class BookingList(generic.ListView):
+    model = Booking
 
 # Homepage View
-class HomePage(generic.TemplateView):
-    template_name = "bookings/index.html" # Path to index template
+#class HomePage(generic.TemplateView):
+    #template_name = "bookings/index.html" # Path to index template
 
 
 # Sign Up Page View
-class SignUpView(generic.CreateView):
-    form_class = CustomUserCreationForm
-    template_name = "sign_up.html"
-    success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
+#class SignUpView(generic.CreateView):
+   # form_class = CustomUserCreationForm
+   # template_name = "sign_up.html"
+   # success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
 
 
 # Login View = using Django's built-in LoginView
 
 
 # Booking List for Admin View
-class BookingListAdmin(generic.ListView):
-    model = Booking
-    template_name = "bookings/bookings_list_admin.html"
-    context_object_name = "bookings_list_for_admin"
+#class BookingListAdmin(generic.ListView):
+   # model = Booking
+    #template_name = "bookings/bookings_list_admin.html"
+    #context_object_name = "bookings_list_for_admin"
 
 
 # Booking List for User View
-class BookingListUser(generic.ListView):
-    model = Booking
-    template_name = "bookings/booking_list_user.html"
-    context_object_name = "booking_list_for_user"
+#class BookingListUser(generic.ListView):
+    #model = Booking
+    #template_name = "bookings/booking_list_user.html"
+    #context_object_name = "booking_list_for_user"
 
 
 # Make a Booking View
-class BookingCreateView(generic.CreateView):
-    model = Booking
-    form_class = BookingForm
-    template_name = "bookings/booking_form.html"
-    success_url = "/" # Will redirect to homepage or another page after booking
+#class BookingCreateView(generic.CreateView):
+    #model = Booking
+   # form_class = BookingForm
+   # template_name = "bookings/booking_form.html"
+   # success_url = "/" # Will redirect to homepage or another page after booking
 
 
 
