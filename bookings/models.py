@@ -40,11 +40,12 @@ class Booking(models.Model):
     booking_created_at = models.DateTimeField(auto_now_add = True) # Sets timestamp only when the record is created
     booking_updated_at = models.DateTimeField(auto_now = True) # Updates timestamp every time the record is saved
 
-    def __str__(self):
-        return f"Booking for {self.user} ({self.booking_id}) at {self.table_booked} on {self.booking_date} at {self.booking_time} for {self.num_of_guests}." # Method returns a string summarising a table booking
-
     class Meta:
         verbose_name = "Booking"
         verbose_name_plural = "Bookings"
         ordering = ["booking_date", "booking_time", "table_booked"] # Shows bookings in chronological order (by date, then time, then table number)
         unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be booked on the same date/time
+
+    def __str__(self):
+        return f"Booking for {self.user} ({self.booking_id}) at {self.table_booked} on {self.booking_date} at {self.booking_time} for {self.num_of_guests}." # Method returns a string summarising a table booking
+
