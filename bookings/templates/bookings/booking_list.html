@@ -10,10 +10,13 @@
 
 <!--Update these fields with correct info later--> 
 <body>
-    <h1>Bookings list</h1>
     {% for booking in object_list %}
-    <p>User: {{booking.user}}</p>
-    <p>Test</p>
+    <h1>Booking Details for {{booking_id}}</h1>
+    <p> Date: {{booking.date}} </p>
+    <p> Time: {{booking.Time}} </p>
+    <p> For Table: {{booking.table_num}}</p>
+    <p> By: {{booking.user}} </p>
+    <p> {{test}} </p>
     {% endfor %}
 </body>
 
