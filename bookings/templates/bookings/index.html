@@ -1,47 +1,33 @@
-<!-- {% extends "base.html" %} --> 
+{% extends "base.html" %}
 
 {% block content %}
 
 <!-- index.html content starts here -->
-<!--Update these fields with correct info later--> 
-<body>
-    {% for booking in object_list %}
-    <h1>Booking Details for {{booking.booking_id}}</h1>
-    <h2>{{ booking.booking_created_at }}</h2>
-    <p> Date: {{ booking.booking_date }} </p>
-    <p> Time: {{ booking.booking_time }} </p>
-    <p> For Table {{ booking.table_booked }} for {{ booking.num_of_guests }}</p>
-    <p> By: {{ booking.booking.user }} </p>
-    <p>{{booking.special_requests}}</p>
-    <p> {{ test }} </p>
-    
-    {% endfor %}
-</body>
-
-
- <!-- commenting out for now as for blog and not for booking system
-
 <div class="container-fluid">
     <div class="row">
 
-        Blog Entries Column 
+        <!-- Booking Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for booking in booking_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">User: {{ booking.user }}</p>
                                 </div>
                             </div>
                             <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
+                                <h2 class="card-title">Booking ID: {{ booking.booking_id }}</h2>
                             </a>
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            <p class="card-text text-muted h6">
+                                Date: {{ booking.booking_date }}<br>
+                                Time: {{ booking.booking_time }}<br>
+                                Table: {{ booking.table_booked }}<br>
+                                Guests: {{ booking.num_of_guests }}
                             </p>
                         </div>
                     </div>
@@ -55,17 +41,8 @@
             </div>
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+   
 </div>
--->
- 
+
 <!-- index.html content ends here -->
 {% endblock %}
