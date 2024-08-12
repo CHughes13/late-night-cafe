@@ -14,12 +14,7 @@ from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserC
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
- # List of all Bookings for Admin
-class BookingList(generic.ListView):
-    queryset = Booking.objects.all().order_by("booking_created_at")
-    template_name = "bookings/admin_booking_list.html"
-    # queryset = Booking.objects.all()
-    # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
+
 
 # User Dashboard
 class BookingListView(generic.ListView):
@@ -81,10 +76,11 @@ class BookingDeleteView(generic.DeleteView):
     template_name = "bookings/confirm_delete.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
-# Booking List for Admin
-class AdminBookingListView(generic.ListView):
-    queryset = Booking.objects.all().order_by("booking_created_at")
-    template_name = "bookings/index.html"
-    context_object_name = "bookings"
+
+
+# List of all Bookings for Admin - DELETE if no time left to implement this
+# class BookingList(generic.ListView):
+# queryset = Booking.objects.all().order_by("booking_created_at")
+# template_name = "bookings/admin_booking_list.html"
     # queryset = Booking.objects.all()
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
