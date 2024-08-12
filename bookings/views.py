@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404 # function is a shortcut for rendering a template and returning an HTTP response
 from django.views import generic # Import Django's built-in generic views
+from django.contrib import messages
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
 from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
 from django.urls import reverse_lazy # Handles URL redirection
@@ -42,24 +43,23 @@ def booking_form(request, booking_id=None):
 		booking = get_object_or_404(Booking, id=booking_id)
 	else:
 		booking = None
-
+    #This block handles the form submission
 	if request.method == "POST":
-		print("Received a POST request")
-		form = BookingForm(request.POST, instance=booking)
-
-		if form.is_valid():
-			booking = form.save(commit=False) # Returns object that hasn't been saved to database yet so it can be modified further.
-			booking.user = request.user
-			booking.booking = booking
-			booking.save()
-			messages.add_message(
+		print("Received a POST request") # Prints message to console for debugging purposes
+		form = BookingForm(request.POST, instance=booking) # Creates an instance of the form with the submitted data
+        if form.is_valid(): # Checks if form's validation rules are met
+            form.save() # Saves the form to the booking instance
+			messages.add_message( # Feedback for user confirming their booking
 				request, messages.SUCCESS,
 				"Booking submitted. We look forward to your visit!"
 			)
 			return redirect("user_dashboard") # User is returned to dashboard where they can see their booking/s
+    
+    #This block handles the GET requests and displays the form
 	else:
-		form = BookingForm(instance=booking)
+		form = BookingForm(instance=booking) # Empty form for user to fill in
 
+    # This block renders the Template
 	return render(
 		request,
 		"bookings/booking_detail.html",
