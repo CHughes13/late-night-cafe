@@ -6,7 +6,7 @@ from django.contrib.auth.views import LoginView  # Import Django's built-in logi
 
 urlpatterns = [
 
-    # This is what is shown on the Homepage
+    # This is what is shown on the Homepage test
     path("", views.HomePageView.as_view(), name="home"),
 
     # Page where User can create a new booking
