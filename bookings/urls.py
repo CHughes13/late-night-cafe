@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView  # Import Django's built-in logi
 urlpatterns = [
 
     # This is what is shown on the Homepage
-    path("", views.BookingList.as_view(), name="home"),
+    path("", views.HomePageView.as_view(), name="home"),
 
     # Page where User can create a new booking
     path("create-booking/", views.BookingCreateView.as_view(), name="create_booking"),

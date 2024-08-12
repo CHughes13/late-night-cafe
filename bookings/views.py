@@ -7,20 +7,17 @@ from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserCreationForm and Booking Form
 
 # Create your views here
-# Note, for Login View = using Django's built-in LoginView
+# Note: for Login View = using Django's built-in LoginView
+
+# Latte Night Cafe Homepage
+class HomePageView(generic.TemplateView):
+    template_name = "bookings/index.html"
 
 class BookingList(generic.ListView):
     queryset = Booking.objects.all().order_by("booking_created_at")
     template_name = "bookings/index.html"
     # queryset = Booking.objects.all()
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
-
-# Make a Booking View
-class BookingCreateView(generic.CreateView):
-    model = Booking
-    form_class = BookingForm
-    template_name = "bookings/booking_form.html"
-    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # User Dashboard
 class BookingListView(generic.ListView):
@@ -30,19 +27,25 @@ class BookingListView(generic.ListView):
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
+# Make a Booking View
+class BookingCreateView(generic.CreateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = "bookings/booking_form.html"
+    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # Edit a Booking
 class BookingUpdateView(generic.UpdateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/update_booking.html"
-    success_url = reverse_lazy("user_dashboard")
+    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # Delete a Booking
 class BookingDeleteView(generic.DeleteView):
     model = Booking
     template_name = "bookings/confirm_delete.html"
-    success_url = reverse_lazy("user_dashboard")
+    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # Booking List for Admin
 class AdminBookingListView(generic.ListView):
