@@ -1,0 +1,13 @@
+<!-- Delete a Booking Template-->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Confirm Delete</h2>
+<p>Are you sure you want to delete the booking for {{ object.table_booked }} on {{ object.booking_date }} at {{ object.booking_time }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete my booking</button>
+    <a href="{% url 'user_dashboard' %}">No, please keep my booking</a>
+</form>
+{% endblock %}

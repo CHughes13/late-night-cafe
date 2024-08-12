@@ -37,3 +37,9 @@ class BookingUpdateView(generic.UpdateView):
     form_class = BookingForm
     template_name = "bookings/update_booking.html"
     success_url = reverse_lazy("user_dashboard")
+
+# Delete a Booking
+class BookingDeleteView(generic.DeleteView):
+    model = Booking
+    template_name = 'bookings/confirm_delete.html'
+    success_url = reverse_lazy('user_dashboard')
