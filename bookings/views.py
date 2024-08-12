@@ -13,6 +13,7 @@ from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserC
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
+ # List of all Bookings for Admin
 class BookingList(generic.ListView):
     queryset = Booking.objects.all().order_by("booking_created_at")
     template_name = "bookings/index.html"
@@ -28,12 +29,50 @@ class BookingListView(generic.ListView):
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
 
-# Create a Booking View
+# Create a Booking Form
 class BookingCreateView(generic.CreateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/booking_form.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
+
+# Create or Edit a Booking
+def booking_detail(request, booking_id=None):
+    if booking_id:
+        booking = get_object_or_404(Booking, id=booking_id)
+    else:
+        booking = None
+
+    if request.method == "POST":
+        print("Received a POST request")
+        form = BookingForm(request.POST, instance=booking)
+        if booking.form.is_valid():
+            booking.form.save(commit=False) # Returns object that hasn't been saved to database yet so it can be modified further.
+            	booking.user = request.user
+	            booking.booking = booking
+	            booking.save()
+                messages.add_message(
+	                request, messages.SUCCESS,
+                )
+	            "Booking submitted"
+                return redirect("user_dashboard")
+    else:
+        form = BookingForm(instance=booking)
+        
+            
+            return redirect("user_dashboard")
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(
+        request,
+        "bookings/booking_detail.html",
+        {"form": form, "booking": booking},
+    )
+
+
+
+
 
 # Edit a Booking
 class BookingUpdateView(generic.UpdateView):

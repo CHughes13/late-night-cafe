@@ -32,6 +32,6 @@ class BookingForm(forms.ModelForm):
 
     messages.add_message(
 	    request, messages.SUCCESS,
-	    "Booking submitted. We look forward to your visit."
+	    "Booking submitted. We look forward to your visit!"
 )
 
