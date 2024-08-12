@@ -14,6 +14,14 @@ class BookingList(generic.ListView):
     # queryset = Booking.objects.all()
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
 
+# Make a Booking View
+class BookingCreateView(generic.CreateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = "bookings/booking_form.html"
+    success_url = reverse_lazy('user_dashboard') # Will redirect to homepage or another page after booking
+
+
 # Homepage View
 #class HomePage(generic.TemplateView):
     #template_name = "bookings/index.html" # Path to index template
@@ -43,12 +51,7 @@ class BookingList(generic.ListView):
     #context_object_name = "booking_list_for_user"
 
 
-# Make a Booking View
-#class BookingCreateView(generic.CreateView):
-    #model = Booking
-   # form_class = BookingForm
-   # template_name = "bookings/booking_form.html"
-   # success_url = "/" # Will redirect to homepage or another page after booking
+
 
 
 

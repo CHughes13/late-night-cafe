@@ -10,12 +10,12 @@ urlpatterns = [
     # Page where User can create a new booking
     path("create-booking/", BookingCreateView.as_view(), name="create_booking"),
 
-    # User dashboard page where they can see their bookings
+    # User dashboard page where they can see all their bookings
     path("dashboard/", BookingListView.as_view(), name="user_dashboard"),
 
-    # Page where User can updating an existing booking 
+    # So User can updating an existing booking 
      path('update-booking/<int:pk>/', BookingUpdateView.as_view(), name='update_booking'),
 
-    # Page where User can delete an existing booking 
+    # So User can delete an existing booking 
     path('delete-booking/<int:pk>/', BookingDeleteView.as_view(), name='delete_booking'),
 ]
