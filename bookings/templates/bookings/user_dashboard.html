@@ -28,7 +28,7 @@
                 <td>{{ booking.num_of_guests }}</td>
                 <td>
                     <!-- Buttons that give the user the option to edit or delete their booking -->
-                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-warning btn-sm">Edit Booking</a>
+                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-primary btn-sm">Edit Booking</a>
                     <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete Booking</a>
                 </td>
             </tr>
