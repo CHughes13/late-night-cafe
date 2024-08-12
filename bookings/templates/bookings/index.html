@@ -2,46 +2,22 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Booking Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for booking in booking_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">User: {{ booking.user }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">Booking ID: {{ booking.booking_id }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">
-                                Date: {{ booking.booking_date }}<br>
-                                Time: {{ booking.booking_time }}<br>
-                                Table: {{ booking.table_booked }}<br>
-                                Guests: {{ booking.num_of_guests }}
-                            </p>
-                        </div>
+<!-- Hero Section starts here -->
+<div class="hero-section">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Hero Image -->
+            <div class="col-12">
+                <div class="hero-image"
+                    style="background-image: url('/path/to/your/hero-image.jpg'); height: 400px; background-size: cover; background-position: center;">
+                    <div class="hero-overlay text-center text-yellow" style="padding: 100px 0;">
+                        <h1 class="display-4">Welcome to Latte Night Cafe</h1>
+                        <p class="lead">Enjoy our cosy environment from sunset to sunrise.</p>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
             </div>
         </div>
     </div>
-   
 </div>
 
 <!-- index.html content ends here -->

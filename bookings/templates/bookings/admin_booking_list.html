@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- admin_booking.html content starts here -->
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Booking Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for booking in booking_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="author">User: {{ booking.user }}</p>
+                                </div>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">Booking ID: {{ booking.booking_id }}</h2>
+                            </a>
+
+                            <hr />
+                            <p class="card-text text-muted h6">
+                                Date: {{ booking.booking_date }}<br>
+                                Time: {{ booking.booking_time }}<br>
+                                Table: {{ booking.table_booked }}<br>
+                                Guests: {{ booking.num_of_guests }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<!-- Admin Booking List.html content ends here -->
+{% endblock %}

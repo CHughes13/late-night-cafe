@@ -46,10 +46,6 @@ class BookingDeleteView(generic.DeleteView):
 
 # Booking List for Admin
 class AdminBookingListView(generic.ListView):
-    model = Booking
-    template_name = "bookings/confirm_delete.html"
-    success_url = reverse_lazy("user_dashboard")
-
     queryset = Booking.objects.all().order_by("booking_created_at")
     template_name = "bookings/index.html"
     context_object_name = "bookings"
