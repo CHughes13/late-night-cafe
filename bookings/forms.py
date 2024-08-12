@@ -20,6 +20,7 @@ class BookingForm(forms.ModelForm):
     # Form validation: if a user tries to pick a booking date in the past, they'll get immediate feedback.
     def clean_booking_date(self): 
         booking_date = self.cleaned_data.get("booking_date")
+        
         if booking_date < datetime.date.today():
             raise ValidationError("The booking date cannot be in the past. Please select another option.")
         return booking_date

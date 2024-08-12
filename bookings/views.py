@@ -16,7 +16,7 @@ class HomePageView(generic.TemplateView):
  # List of all Bookings for Admin
 class BookingList(generic.ListView):
     queryset = Booking.objects.all().order_by("booking_created_at")
-    template_name = "bookings/index.html"
+    template_name = "bookings/admin_booking_list.html"
     # queryset = Booking.objects.all()
     # HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
 
@@ -36,7 +36,6 @@ class BookingCreateView(generic.CreateView):
     template_name = "bookings/booking_form.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
-# Create or Edit a Booking
 # Create or Edit a Booking
 def booking_form(request, booking_id=None):
 	if booking_id:
