@@ -57,8 +57,8 @@ INSTALLED_APPS = [
     'bookings',
 ]
 
-# Tells Django how many sites are using the database
-SITE_ID = 1
+
+SITE_ID = 1 # Tells Django how many sites are using the database
 # Redirects URLs - site will automatically redirect to homepage after login/out
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

@@ -5,7 +5,7 @@ from django.contrib.auth.views import LoginView  # Import Django's built-in logi
 #URL pattern order should go from the least to the most specific to ensure that only one path matches.
 
 urlpatterns = [
-    
+
     # This is what is shown on the Homepage
     path("", views.BookingList.as_view(), name="home"),
 
@@ -20,4 +20,7 @@ urlpatterns = [
 
     # So User can delete an existing booking
     path("delete-booking/<int:pk>/", views.BookingDeleteView.as_view(), name="delete_booking"),
+
+    # List of all Bookings just for admin
+    path("", views.BookingList.as_view(), name="home"),
 ]
