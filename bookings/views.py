@@ -14,16 +14,14 @@ from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserC
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
-
-
 # User Dashboard
 class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
 
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user)
+    def get_queryset(self): # Filters bookings so current user can only see their own
+        return Booking.objects.filter(user=self.request.user).order_by("booking_date", "booking_time") # Orders the users bookings by date then time/chronological order
 
 # Create a Booking Form
 class BookingCreateView(generic.CreateView):
@@ -32,7 +30,6 @@ class BookingCreateView(generic.CreateView):
     template_name = "bookings/booking_form.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
-# Create or Edit a Booking
 def booking_form(request, booking_id=None):
 	if booking_id:
 		booking = get_object_or_404(Booking, id=booking_id)
@@ -63,7 +60,7 @@ def booking_form(request, booking_id=None):
 
 
 
-# Edit a Booking
+# Update/Edit a Booking
 class BookingUpdateView(generic.UpdateView):
     model = Booking
     form_class = BookingForm
