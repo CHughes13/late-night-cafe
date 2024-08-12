@@ -2,6 +2,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<!-- Displays user's bookings in an easy to read table-->
 <div class="container mt-4">
     <h1 class="text-center">Your Bookings</h1>
     {% if bookings %}
@@ -25,15 +27,22 @@
                 <td>{{ booking.table_booked }}</td>
                 <td>{{ booking.num_of_guests }}</td>
                 <td>
-                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                    <!-- Buttons that give the user the option to edit or delete their booking -->
+                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-warning btn-sm">Edit Booking</a>
+                    <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete Booking</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <!-- If there are no bookings, this message will display instead -->
     {% else %}
     <p class="text-center">No bookings found.</p>
     {% endif %}
+
+    <!--Create Booking Button -->
+    <div class="text-center">
+        <a href="{% url 'create_booking' %}" class="btn btn-warning btn-lg">Create a Booking</a>
+    </div>
 </div>
 {% endblock %}
