@@ -20,13 +20,13 @@ class BookingCreateView(generic.CreateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/booking_form.html"
-    success_url = reverse_lazy("user_dashboard") # Will redirect to homepage or another page after booking
+    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # User Dashboard
 class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
-    context_object_name = 'bookings'
+    context_object_name = "bookings"
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
@@ -41,5 +41,5 @@ class BookingUpdateView(generic.UpdateView):
 # Delete a Booking
 class BookingDeleteView(generic.DeleteView):
     model = Booking
-    template_name = 'bookings/confirm_delete.html'
-    success_url = reverse_lazy('user_dashboard')
+    template_name = "bookings/confirm_delete.html"
+    success_url = reverse_lazy("user_dashboard")
