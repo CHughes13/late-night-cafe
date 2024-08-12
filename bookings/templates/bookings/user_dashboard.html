@@ -1,20 +1,39 @@
 <!-- User Dashboard Template-->
-
 {% extends "base.html" %}
 
 {% block content %}
 <div class="container mt-4">
     <h1 class="text-center">Your Bookings</h1>
-        <div class="list-group">
+    {% if bookings %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Table</th>
+                <th>Guests</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for booking in bookings %}
-
-            <ul>
-    {% for booking in bookings %}
-    <li>
-        Table {{ booking.table_booked }} on {{ booking.booking_date }} at {{ booking.booking_time }} for {{ booking.num_of_guests }} guest/s.
-        <a href="{% url 'update_booking' booking.pk %}">Edit Booking</a> |
-        <a href="{% url 'delete_booking' booking.pk %}">Delete Booking</a>
-    </li>
-    {% endfor %}
-</ul>
+            <tr>
+                <td>{{ booking.booking_id }}</td>
+                <td>{{ booking.booking_date }}</td>
+                <td>{{ booking.booking_time }}</td>
+                <td>{{ booking.table_booked }}</td>
+                <td>{{ booking.num_of_guests }}</td>
+                <td>
+                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-center">No bookings found.</p>
+    {% endif %}
+</div>
 {% endblock %}
