@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'cloudinary_storage',
     'cloudinary',
     'bookings',
@@ -62,6 +64,10 @@ SITE_ID = 1 # Tells Django how many sites are using the database
 # Redirects URLs - site will automatically redirect to homepage after login/out
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Form templates pack
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
