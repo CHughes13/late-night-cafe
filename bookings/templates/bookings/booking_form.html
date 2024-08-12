@@ -1,12 +1,16 @@
 <!-- Create Booking Form Template-->
-{% load crispy_forms_tags %}
+
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <h2>Create a Booking</h2>
 <form method="post">
-    {% csrf_token %} <!-- This token protects app from Cross-Site Request Forgery (CSRF) attacks, ensures submission comes from authenticated user -->
-    {{ form|crispy }}  <!-- Make form using Crispy Forms -->
-    <button type="submit">Create Booking</button>
+    {% csrf_token %}
+    <!-- This token protects app from Cross-Site Request Forgery (CSRF) attacks, ensures submission comes from authenticated user -->
+    {{ form|crispy }}
+    <!-- Make form using Crispy Forms -->
+    <button class="btn btn-secondary" type="submit">Create a Booking</button>
 </form>
 {% endblock %}

@@ -23,5 +23,15 @@ class BookingForm(forms.ModelForm):
         if booking_date < datetime.date.today():
             raise ValidationError("The booking date cannot be in the past. Please select another option.")
         return booking_date
-        
+    
+    if booking_form.is_valid():
+	    booking = booking_form.save(commit=False) # Returns object that hasn't been saved to database yet so it can be modified futher.
+	    booking.user = request.user
+	    booking.booking = booking
+	    booking.save()
+
+    messages.add_message(
+	    request, messages.SUCCESS,
+	    "Booking submitted. We look forward to your visit."
+)
 

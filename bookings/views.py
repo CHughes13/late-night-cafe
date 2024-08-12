@@ -27,7 +27,8 @@ class BookingListView(generic.ListView):
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
-# Make a Booking View
+
+# Create a Booking View
 class BookingCreateView(generic.CreateView):
     model = Booking
     form_class = BookingForm
