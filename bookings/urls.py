@@ -22,5 +22,5 @@ urlpatterns = [
     path("delete-booking/<int:pk>/", views.BookingDeleteView.as_view(), name="delete_booking"),
 
     # List of all Bookings just for admin
-    path("", views.BookingList.as_view(), name="home"),
+    path("admin-booking-list/", views.AdminBookingListView.as_view(), name="admin_booking_list"),
 ]
