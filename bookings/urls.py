@@ -7,15 +7,15 @@ urlpatterns = [
     # This is what is shown on the Homepage
     path("", views.BookingList.as_view(), name="home"),
 
-    # Create booking page
-    path("create-booking/", views.create_booking, name="create_booking"),
+    # Page where User can create a new booking
+    path("create-booking/", BookingCreateView.as_view(), name="create_booking"),
 
-    # User dashboard page that is seen why user logs in
-    path('dashboard/', views.user_dashboard, name='user_dashboard'),
+    # User dashboard page where they can see their bookings
+    path("dashboard/", BookingListView.as_view(), name="user_dashboard"),
 
-    # Update booking page
-    path('update-booking/<int:booking_id>/', views.update_booking, name='update_booking'),
+    # Page where User can updating an existing booking 
+     path('update-booking/<int:pk>/', BookingUpdateView.as_view(), name='update_booking'),
 
-    # Delete booking page
-    path('delete-booking/<int:booking_id>/', views.delete_booking, name='delete_booking'),
+    # Page where User can delete an existing booking 
+    path('delete-booking/<int:pk>/', BookingDeleteView.as_view(), name='delete_booking'),
 ]
