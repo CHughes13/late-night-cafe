@@ -3,8 +3,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Your Bookings</h2>
-<ul>
+<div class="container mt-4">
+    <h1 class="text-center">Your Bookings</h1>
+        <div class="list-group">
+            {% for booking in bookings %}
+
+            <ul>
     {% for booking in bookings %}
     <li>
         Table {{ booking.table_booked }} on {{ booking.booking_date }} at {{ booking.booking_time }} for {{ booking.num_of_guests }} guest/s.
