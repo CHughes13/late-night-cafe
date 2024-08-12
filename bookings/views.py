@@ -23,10 +23,17 @@ class BookingCreateView(generic.CreateView):
     success_url = reverse_lazy("user_dashboard") # Will redirect to homepage or another page after booking
 
 # User Dashboard
-class BookingListView(ListView):
+class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = 'bookings'
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
+
+# Edit a Booking
+class BookingUpdateView(generic.UpdateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = "bookings/update_booking.html"
+    success_url = reverse_lazy("user_dashboard")
