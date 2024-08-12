@@ -37,41 +37,35 @@ class BookingCreateView(generic.CreateView):
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 # Create or Edit a Booking
+# Create or Edit a Booking
 def booking_form(request, booking_id=None):
-    if booking_id:
-        booking = get_object_or_404(Booking, id=booking_id)
-    else:
-        booking = None
+	if booking_id:
+		booking = get_object_or_404(Booking, id=booking_id)
+	else:
+		booking = None
 
-    if request.method == "POST":
-        print("Received a POST request")
-        form = BookingForm(request.POST, instance=booking)
+	if request.method == "POST":
+		print("Received a POST request")
+		form = BookingForm(request.POST, instance=booking)
 
-        if booking_form.is_valid():
-	        booking = booking_form.save(commit=False) # Returns object that hasn't been saved to database yet so it can be modified futher.
-	        booking.user = request.user
-	        booking.booking = booking
-	        booking.save()
-                messages.add_message(
-	                request, messages.SUCCESS,
-                    "Booking submitted. We look forward to your visit!"
-                )
-                return redirect("user_dashboard")
-    else:
-        form = BookingForm(instance=booking)
-        
-            
-            return redirect("user_dashboard")
-    else:
-        form = BookingForm(instance=booking)
+		if form.is_valid():
+			booking = form.save(commit=False) # Returns object that hasn't been saved to database yet so it can be modified further.
+			booking.user = request.user
+			booking.booking = booking
+			booking.save()
+			messages.add_message(
+				request, messages.SUCCESS,
+				"Booking submitted. We look forward to your visit!"
+			)
+			return redirect("user_dashboard") # User is returned to dashboard where they can see their booking/s
+	else:
+		form = BookingForm(instance=booking)
 
-    return render(
-        request,
-        "bookings/booking_detail.html",
-        {"form": form, "booking": booking},
-    )
-
-
+	return render(
+		request,
+		"bookings/booking_detail.html",
+		{"form": form, "booking": booking},
+	)
 
 
 
