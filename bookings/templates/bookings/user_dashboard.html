@@ -1,0 +1,16 @@
+<!-- User Dashboard-->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Your Bookings</h2>
+<ul>
+    {% for booking in bookings %}
+    <li>
+        Table {{ booking.table_booked }} on {{ booking.booking_date }} at {{ booking.booking_time }} for {{ booking.num_of_guests }} guest/s.
+        <a href="{% url 'update_booking' booking.pk %}">Edit Booking</a> |
+        <a href="{% url 'delete_booking' booking.pk %}">Delete Booking</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

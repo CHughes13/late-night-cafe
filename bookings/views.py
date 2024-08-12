@@ -7,6 +7,7 @@ from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm #Import local CustomUserCreationForm and Booking Form
 
 # Create your views here
+# Note, for Login View = using Django's built-in LoginView
 
 class BookingList(generic.ListView):
     queryset = Booking.objects.all().order_by("booking_created_at")
@@ -19,40 +20,13 @@ class BookingCreateView(generic.CreateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/booking_form.html"
-    success_url = reverse_lazy('user_dashboard') # Will redirect to homepage or another page after booking
+    success_url = reverse_lazy("user_dashboard") # Will redirect to homepage or another page after booking
 
+# User Dashboard
+class BookingListView(ListView):
+    model = Booking
+    template_name = "bookings/user_dashboard.html"
+    context_object_name = 'bookings'
 
-# Homepage View
-#class HomePage(generic.TemplateView):
-    #template_name = "bookings/index.html" # Path to index template
-
-
-# Sign Up Page View
-#class SignUpView(generic.CreateView):
-   # form_class = CustomUserCreationForm
-   # template_name = "sign_up.html"
-   # success_url = reverse_lazy("login") # Redirects to the login page when sign up is successful
-
-
-# Login View = using Django's built-in LoginView
-
-
-# Booking List for Admin View
-#class BookingListAdmin(generic.ListView):
-   # model = Booking
-    #template_name = "bookings/bookings_list_admin.html"
-    #context_object_name = "bookings_list_for_admin"
-
-
-# Booking List for User View
-#class BookingListUser(generic.ListView):
-    #model = Booking
-    #template_name = "bookings/booking_list_user.html"
-    #context_object_name = "booking_list_for_user"
-
-
-
-
-
-
-
+    def get_queryset(self):
+        return Booking.objects.filter(user=self.request.user)
