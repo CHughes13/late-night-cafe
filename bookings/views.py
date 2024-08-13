@@ -41,8 +41,11 @@ def booking_form(request, booking_id=None):
     if request.method == "POST":
         print("Received a POST request") # Prints message to console for debugging purposes
         form = BookingForm(request.POST, instance=booking) # Creates an instance of the form with the submitted data
+        
         if form.is_valid(): # Checks if form's validation rules are met
-            form.save() # Saves the form to the booking instance
+            booking = form.save(commit=False)  # Doesn't commit form to the database yet
+            booking.user = request.user  # Assigns the logged-in user to the booking
+            booking.save()  # Now saves form to the database
             messages.add_message( # Feedback for user confirming their booking
                 request, messages.SUCCESS,
                 "Booking submitted. We look forward to your visit!"
