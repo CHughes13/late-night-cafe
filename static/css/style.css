@@ -113,10 +113,10 @@ body {
 }
 
 .social-media-icon a {
-    color: #F6C02C; /* Social media icon color */
+    color: #FFF; /* Social media icon color */ 
     font-size: 1.5rem;
 }
 
 .social-media-icon a:hover {
-    color: #FFF; /* White color on hover */
+    color: #F6C02C; /* White color on hover */
 }
