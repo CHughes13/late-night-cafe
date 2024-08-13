@@ -6,6 +6,11 @@
         border-radius: 5px; /* Optional: to add rounded corners */
     }
 
+/* Add padding and margin to content block */
+.content-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 body {
     background-color: #F9FAFC;

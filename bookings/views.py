@@ -33,6 +33,10 @@ class BookingCreateView(generic.CreateView):
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 def booking_form(request, booking_id=None):
+    if not request.user.is_authenticated:
+        messages.info(request, "You need to be logged in to create a booking.")
+        return redirect(reverse("account_login"))
+
     if booking_id:
         booking = get_object_or_404(Booking, id=booking_id)
     else:
