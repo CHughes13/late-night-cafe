@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse # function is a shortcut for rendering a template and returning an HTTP response
+from django.shortcuts import render, get_object_or_404, reverse, redirect # function is a shortcut for rendering a template and returning an HTTP response
 from django.views import generic # Import Django's built-in generic views
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -27,9 +27,16 @@ class BookingListView(generic.ListView):
 # Create a Booking Form
 class BookingCreateView(generic.CreateView):
     model = Booking
-    form_class = BookingForm(request=request, initial={'user_id': request.user.id})
+   # form_class = BookingForm(request=request, initial={'user_id': request.user.id})
+    form_class = BookingForm
     template_name = "bookings/booking_form.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
+
+# This code block is thanks to Alice Ridgway of ctrlzblog.com
+    def get_form_kwargs(self):
+        kwargs = super(BookingCreateView, self).get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
 
 def booking_form(request, booking_id=None):
     # Checks if a booking_id is provided in the URL

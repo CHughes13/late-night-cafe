@@ -17,6 +17,13 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ["booking_date", "booking_time", "table_booked", "num_of_guests", "special_requests"]
 
+# This code block is thanks to Alice Ridgway of ctrlzblog.com
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(BookingForm, self).__init__(*args, **kwargs)
+        if self.request:
+            self.fields['user_id'].initial = self.request.user.id
+
     # Form validation: if a user tries to pick a booking date in the past, they'll get immediate feedback.
     def clean_booking_date(self): 
         booking_date = self.cleaned_data.get("booking_date")
