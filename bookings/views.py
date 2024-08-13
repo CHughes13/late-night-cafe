@@ -34,7 +34,11 @@ class BookingCreateView(generic.CreateView):
 
 def booking_form(request, booking_id=None):
     if not request.user.is_authenticated:
-        messages.info(request, "You need to be logged in to create a booking.")
+        messages.add_message( # Feedback for user confirming their booking
+                request, messages.ERROR,
+                "You need to be logged in to create a booking."
+        )
+
         return redirect(reverse("account_login"))
 
     if booking_id:
