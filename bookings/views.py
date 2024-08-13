@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404 # function is a shortcut for rendering a template and returning an HTTP response
+from django.shortcuts import render, get_object_or_404, reverse # function is a shortcut for rendering a template and returning an HTTP response
 from django.views import generic # Import Django's built-in generic views
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.contrib.auth.views import LoginView  # Import Django's built-in login view
 from django.contrib.auth.forms import UserCreationForm  # Import UserCreationForm for sign up
 from django.urls import reverse_lazy # Handles URL redirection
@@ -52,7 +53,7 @@ def booking_form(request, booking_id=None):
     else:
         form = BookingForm(instance=booking) # Empty form for user to fill in
 
-    # This block renders the Template
+    # This block renders the form template
     return render(
         request,
         "bookings/booking_detail.html",
@@ -64,7 +65,21 @@ class BookingUpdateView(generic.UpdateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/update_booking.html"
-    success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
+    success_url = reverse_lazy("user_dashboard")  # Will redirect to user dashboard
+
+    def form_valid(self, form):
+        try:
+            response = super().form_valid(form) # Saves the form/updated data to the database
+            messages.success(self.request, "Your booking has been updated!")  # Sends success feedback to user
+            return response
+        except Exception as e: # If an error occurs during form processing then this block of code will trigger
+            messages.error(self.request, "Oops! There was a problem updating your booking. Please try again.")  # Sends error feedback to user
+            return self.form_invalid(form)
+
+    def form_invalid(self, form): # Handles the error
+        # This will re-render the form with error messages so the user can correct their booking details
+        messages.error(self.request, "Whoops! There was an issue updating your booking. Please check your booking details and try again.")
+        return super().form_invalid(form)
 
 # Delete a Booking
 class BookingDeleteView(generic.DeleteView):
