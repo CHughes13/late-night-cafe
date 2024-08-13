@@ -5,11 +5,11 @@ from django.core.exceptions import ValidationError # Import used to raise valida
 from .models import Booking # Import local Booking model
 import datetime # For handling date and time operations
 
-# Form users fill in to register and sign up to the site - I DON@T THINK I NEED THIS
-#class CustomUserCreationForm(UserCreationForm):
-    #class Meta:
-        #model = User
-        #fields = ["first_name", "last_name", "email", "username", "password1", "password2"]
+# Form users fill in to register and sign up to the site
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email", "username", "password1", "password2"]
 
 # Form users fill in to create a booking
 class BookingForm(forms.ModelForm):
