@@ -57,7 +57,7 @@ def booking_form(request, booking_id=None):
 
     # This block handles the GET requests and displays the form
     else:
-        form = BookingForm(request.user, instance=booking) # Empty form for user to fill in
+        form = BookingForm(request.user.id, instance=booking) # Empty form for user to fill in
 
     # This block renders the form template
     return render(
