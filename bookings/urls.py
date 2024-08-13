@@ -10,7 +10,8 @@ urlpatterns = [
     path("", views.HomePageView.as_view(), name="home"),
 
     # Page where User can create a new booking
-    path("create-booking/", views.BookingCreateView.as_view(), name="create_booking"),
+    # path("create-booking/", views.BookingCreateView.as_view(), name="create_booking"),
+    path("create-booking/", views.booking_form, name="create_booking"),
 
     # User dashboard page where they can see all their bookings
     path("dashboard/", views.BookingListView.as_view(), name="user_dashboard"),

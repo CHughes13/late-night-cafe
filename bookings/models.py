@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
 from django.utils import timezone # Pulls in default timezone info which is Europe/London
 
 # Create your models here.

@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm  # Import UserCreationFor
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm # Import local CustomUserCreationForm and Booking Form
+from django.shortcuts import redirect
 
 # Create your views here
 # Note: for Login View = using Django's built-in LoginView
@@ -60,7 +61,8 @@ def booking_form(request, booking_id=None):
     # This block renders the form template
     return render(
         request,
-        "bookings/booking_detail.html",
+        # "bookings/booking_detail.html",
+        "bookings/booking_form.html",
         {"form": form, "booking": booking},
     )
 
