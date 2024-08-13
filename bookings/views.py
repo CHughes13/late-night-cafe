@@ -36,6 +36,8 @@ def booking_form(request, booking_id=None):
         booking = get_object_or_404(Booking, id=booking_id)
     else:
         booking = None
+    # Print the request object to see if it's getting through
+    print(request) 
 
     # This block handles the form submission
     if request.method == "POST":
