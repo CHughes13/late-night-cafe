@@ -15,6 +15,7 @@
                 <th>Time</th>
                 <th>Table</th>
                 <th>Guests</th>
+                <th>Special Requests</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{ booking.booking_time }}</td>
                 <td>{{ booking.table_booked }}</td>
                 <td>{{ booking.num_of_guests }}</td>
+                <td>{{ booking.special_requests }}</td>
                 <td>
                     <!-- Buttons that give the user the option to edit or delete their booking -->
                     <a href="{% url 'update_booking' booking.pk %}" class="btn btn-primary btn-sm">Edit Booking</a>
