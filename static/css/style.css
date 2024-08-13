@@ -1,3 +1,12 @@
+.text-overlay {
+        background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+        padding: 5px 10px; /* Adjust padding as needed */
+        display: inline-block; /* Ensure it only takes up the width of the text */
+        color: white; /* White text */
+        border-radius: 5px; /* Optional: to add rounded corners */
+    }
+
+
 body {
     background-color: #F9FAFC;
 }
@@ -28,10 +37,11 @@ body {
 
 .navbar-dark .navbar-nav .nav-link.active {
     color: #F6C02C; /* Keep the active nav link highlighted */
+    text-decoration: underline; 
 }
 
 .navbar-dark .navbar-brand {
-    color: #F6C02C; /* Highlight color for brand text */
+    color: #F6C02C; /* Color for brand text - Latte Night Cafe */
 }
 
 .post-link {
@@ -57,25 +67,9 @@ body {
     color: #23BBBB;
 }
 
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-/* Links */
+/* Links 
 .link {
     color: #23BBBB;
     text-decoration: none;
@@ -94,8 +88,9 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+    */
 
-/* Footer */
+/* Footer styles*/
 .footer {
     background-color: #223D68; /* Dark background color for footer */
     color: #F6C02C; /* Text color in the footer */
