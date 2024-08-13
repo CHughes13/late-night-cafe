@@ -15,7 +15,7 @@ class CustomUserCreationForm(UserCreationForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ["user_id", "booking_date", "booking_time", "table_booked", "num_of_guests", "special_requests"]
+        fields = ["booking_date", "booking_time", "table_booked", "num_of_guests", "special_requests"]
 
     # Form validation: if a user tries to pick a booking date in the past, they'll get immediate feedback.
     def clean_booking_date(self): 

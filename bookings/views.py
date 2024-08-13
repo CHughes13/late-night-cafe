@@ -27,7 +27,7 @@ class BookingListView(generic.ListView):
 # Create a Booking Form
 class BookingCreateView(generic.CreateView):
     model = Booking
-    form_class = BookingForm
+    form_class = BookingForm(request=request, initial={'user_id': request.user.id})
     template_name = "bookings/booking_form.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
