@@ -32,19 +32,22 @@ class BookingCreateView(generic.CreateView):
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
 def booking_form(request, booking_id=None):
+    # Checks if a booking_id is provided in the URL
     if booking_id:
+    # If a booking_id is provided, then the corresponding Booking object is retrieved
         booking = get_object_or_404(Booking, id=booking_id)
     else:
+        # If no booking_id is provided, booking is set to None
         booking = None
 
     # This block handles the form submission
     if request.method == "POST":
         print("Received a POST request") # Prints message to console for debugging purposes
-        form = BookingForm(request.POST, instance=booking) # Creates an instance of the form with the submitted data
+        form = BookingForm(request.user.id, request.POST, instance=booking) # Creates an instance of the form, passing in the current user along with the submitted form data
         
         if form.is_valid(): # Checks if form's validation rules are met
             booking = form.save(commit=False)  # Doesn't commit form to the database yet
-            booking.user = request.user  # Assigns the logged-in user to the booking
+            booking.user = request.user.id  # Assigns the logged-in user to the booking
             booking.save()  # Now saves form to the database
             messages.add_message( # Feedback for user confirming their booking
                 request, messages.SUCCESS,
@@ -54,7 +57,7 @@ def booking_form(request, booking_id=None):
 
     # This block handles the GET requests and displays the form
     else:
-        form = BookingForm(instance=booking) # Empty form for user to fill in
+        form = BookingForm(request.user, instance=booking) # Empty form for user to fill in
 
     # This block renders the form template
     return render(
