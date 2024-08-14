@@ -34,17 +34,16 @@ class BookingCreateView(generic.CreateView):
 
 def booking_form(request, booking_id=None):
     if not request.user.is_authenticated:
-        messages.add_message( # Feedback for user confirming their booking
+        messages.add_message( # Feedback for user letting them know they have to sign in to make a booking
                 request, messages.ERROR,
                 "You need to be logged in to create a booking."
         )
+        return redirect(reverse("account_login")) # Redirects a non-logged in User to sign in page so they can log in/sign up so they can make a booking
 
-        return redirect(reverse("account_login"))
-
-    if booking_id:
-        booking = get_object_or_404(Booking, id=booking_id)
+    if booking_id: # Checks to see if booking_id is provided
+        booking = get_object_or_404(Booking, id=booking_id) # If there is a booking id, then the form will populate with data from that existing booking
     else:
-        booking = None
+        booking = None # If there is no booking id, then the form will be blank and new
     
 
     # This block handles the form submission
@@ -61,6 +60,7 @@ def booking_form(request, booking_id=None):
                 "Booking submitted. We look forward to your visit!"
             )
             return redirect("user_dashboard") # User is returned to dashboard where they can see their booking/s
+
 
     # This block handles the GET requests and displays the form
     else:
