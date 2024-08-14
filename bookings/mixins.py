@@ -16,7 +16,7 @@ class UserIsOwnerMixin:
 
 
 # Checks to see if user is superuser
-class AdminRequiredMixin(UserPassesTestMixin):
+class SuperuserRequiredMixin(UserPassesTestMixin):
     def test_func(self):
         return self.request.user.is_superuser
         
