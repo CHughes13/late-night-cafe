@@ -107,7 +107,7 @@ class BookingDeleteView(UserIsOwnerMixin, generic.DeleteView):
         return response
 
 
-# List of all Bookings for Admin - DELETE if no time left to implement this
+# List of all Bookings for Admin - DO THIS NEXT!!!
 # class BookingList(generic.ListView):
 #     queryset = Booking.objects.all().order_by("booking_created_at")
 #     template_name = "bookings/admin_booking_list.html"
