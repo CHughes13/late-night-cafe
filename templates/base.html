@@ -4,6 +4,8 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'admin_dashboard' as admin_dashboard_url %}
+{% url 'user_dashboard' as user_dashboard_url%}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -61,6 +63,14 @@
                             <a class="nav-link {% if request.path == my_bookings_url %}active"
                                 aria-current="page{% endif %}" href="{% url 'user_dashboard' %}">My Bookings</a>
                         </li>
+
+                        {% if user.is_superuser %}
+                        <!-- "Admin Dashboard" navbar tab for Admins only -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == admin_dashboard_url %}active"
+                                aria-current="page{% endif %}" href="{% url 'admin_dashboard' %}">Admin Dashboard</a>
+                        </li>
+
 
                         <!-- "Log Out" navbar tab for logged-in users -->
                         <li class="nav-item">
@@ -164,10 +174,10 @@
                         <a href="tel:+441234567890" target="_blank" rel="noopener"
                             aria-label="Call us on the phone (opens calling app in a new tab)"
                             title="Call +44 (0) 1234 567 890"> <i class="fas fa-phone"></i></a>
-                            <ul class="text-white text-center">
-                                <li>Call +44 (0) 1234 567 890</li>
-                            </ul>
-                        
+                        <ul class="text-white text-center">
+                            <li>Call +44 (0) 1234 567 890</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

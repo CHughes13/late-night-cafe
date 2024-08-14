@@ -36,6 +36,7 @@ class AdminBookingListView(SuperuserRequiredMixin, generic.ListView): # Admin = 
     model = Booking
     template_name = "bookings/admin_dashboard.html"
     context_object_name = "bookings"
+    success_url = reverse_lazy("admin_dashboard")
 
     def get_queryset(self): # Filters bookings so only Admin can see
         return Booking.objects.all().order_by("booking_date", "booking_time") # Orders all the users bookings by date then time/chronological order
@@ -76,7 +77,7 @@ def booking_form(request, booking_id=None):
 
 # USER VIEWS
 # User Dashboard - lists bookings for the logged in user
-class ABookingListView(generic.ListView):
+class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
