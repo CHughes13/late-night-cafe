@@ -39,7 +39,19 @@ class AdminBookingListView(SuperuserRequiredMixin, generic.ListView): # Admin = 
     success_url = reverse_lazy("admin_dashboard")
 
     def get_queryset(self): # Filters bookings so only Admin can see
-        return Booking.objects.all().order_by("booking_date", "booking_time") # Orders all the users bookings by date then time/chronological order
+        queryset = Booking.objects.all()
+
+        # Ability to sort bookings
+        sort_by = self.request.GET.get('sort_by', 'booking_date')  # Default sort field
+        sort_order = self.request.GET.get('sort_order', 'asc')     # Default sort order
+
+        if sort_order == 'desc':
+            sort_by = f'-{sort_by}'
+
+        queryset = queryset.order_by(sort_by)
+
+        return queryset
+
 
 def booking_form(request, booking_id=None):
     if not request.user.is_authenticated:
