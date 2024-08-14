@@ -58,7 +58,6 @@
                         </li>
 
                         {% if user.is_authenticated %}
-
                         <!-- "My Bookings" navbar tab for logged-in users -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == my_bookings_url %}active"
@@ -79,6 +78,7 @@
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'account_logout' %}">Logout</a>
                         </li>
+                        
                         {% else %}
 
                         <!-- Registration link for non-authenticated/new users -->
