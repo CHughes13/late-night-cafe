@@ -100,11 +100,10 @@ class BookingDeleteView(generic.DeleteView):
     template_name = "bookings/confirm_delete.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
 
-    def delete(self, request, *args, **kwargs):
+    def delete(self, request, *args, **kwargs): #This calls the parent class's delete method, which handles the deletion of the object.
         response = super().delete(request, *args, **kwargs)
-        messages.success(request, "Your booking has been deleted.") # Feedback for user that confirms their booking has been deleted
+        messages.success(self.request, "Your booking has been deleted!")  # # Feedback for user that confirms their booking has been delete
         return response
-
 
 
 # List of all Bookings for Admin - DELETE if no time left to implement this

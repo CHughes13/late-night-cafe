@@ -1,9 +1,11 @@
-<!--Update Booking Template-->
+<!-- Update Booking Template -->
 
 {% extends "base.html" %}
 
 {% block content %}
+
 <h2>Update Booking</h2>
+
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -11,4 +13,5 @@
     <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete Booking</a>
     <a href="{% url 'user_dashboard' %}" class="btn btn-secondary btn-sm">Cancel</a>
 </form>
+
 {% endblock %}
