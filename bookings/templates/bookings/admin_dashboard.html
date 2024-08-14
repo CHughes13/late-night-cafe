@@ -9,7 +9,7 @@
 <div class="container mt-4">
     <h1 class="text-center">All Bookings for Latte Night Cafe</h1>
 
-<!-- Allows Admin to sort through all bookings -->
+    <!-- Allows Admin to sort through all bookings -->
 
     <!-- Sorting Form -->
     <form method="get" class="mb-4">
@@ -17,17 +17,20 @@
             <h2> Sort by: </h2>
             <div class="col">
                 <select name="sort_by" class="form-control">
-                    <option value="booking_date" {% if request.GET.sort_by == 'booking_date' %}selected{% endif %}>Date</option>
+                    <option value="booking_date" {% if request.GET.sort_by == 'booking_date' %}selected{% endif %}>Date
+                    </option>
                     <option value="user" {% if request.GET.sort_by == 'user' %}selected{% endif %}>User</option>
-                    <option value="special_requests" {% if request.GET.sort_by == 'special_requests' %}selected{% endif %}>Special Requests</option>
-                  <!-- Add more here sorting options as needed -->
+                    <option value="special_requests"
+                        {% if request.GET.sort_by == 'special_requests' %}selected{% endif %}>Special Requests</option>
+                    <!-- Add more here sorting options as needed -->
                 </select>
             </div>
 
             <div class="col">
                 <select name="sort_order" class="form-control">
                     <option value="asc" {% if request.GET.sort_order == 'asc' %}selected{% endif %}>Ascending</option>
-                    <option value="desc" {% if request.GET.sort_order == 'desc' %}selected{% endif %}>Descending</option>
+                    <option value="desc" {% if request.GET.sort_order == 'desc' %}selected{% endif %}>Descending
+                    </option>
                 </select>
             </div>
 

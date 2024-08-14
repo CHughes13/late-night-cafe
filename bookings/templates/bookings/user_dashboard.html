@@ -5,30 +5,31 @@
 
 <!-- Allows User to sort through their bookings -->
 
-    <!-- Sorting Form -->
-    <form method="get" class="mb-4">
-        <div class="row">
-            <h2> Sort by: </h2>
-            <div class="col">
-                <select name="sort_by" class="form-control">
-                    <option value="booking_date" {% if request.GET.sort_by == 'booking_date' %}selected{% endif %}>Date</option>
-                  <!-- Add more here sorting options as needed -->
-                </select>
-            </div>
-
-            <div class="col">
-                <select name="sort_order" class="form-control">
-                    <option value="asc" {% if request.GET.sort_order == 'asc' %}selected{% endif %}>Ascending</option>
-                    <option value="desc" {% if request.GET.sort_order == 'desc' %}selected{% endif %}>Descending</option>
-                </select>
-            </div>
-
-            <div class="col">
-                <button type="submit" class="btn btn-primary">Sort</button>
-            </div>
-
+<!-- Sorting Form -->
+<form method="get" class="mb-4">
+    <div class="row">
+        <h2> Sort by: </h2>
+        <div class="col">
+            <select name="sort_by" class="form-control">
+                <option value="booking_date" {% if request.GET.sort_by == 'booking_date' %}selected{% endif %}>Date
+                </option>
+                <!-- Add more here sorting options as needed -->
+            </select>
         </div>
-    </form>
+
+        <div class="col">
+            <select name="sort_order" class="form-control">
+                <option value="asc" {% if request.GET.sort_order == 'asc' %}selected{% endif %}>Ascending</option>
+                <option value="desc" {% if request.GET.sort_order == 'desc' %}selected{% endif %}>Descending</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Sort</button>
+        </div>
+
+    </div>
+</form>
 
 
 <!-- Displays user's bookings in an easy to read table-->
