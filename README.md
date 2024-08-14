@@ -97,59 +97,44 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 ## Testing and Debugging
 
+Create test.py files and contaST MANUAL TESTING through
+![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/11b59ef1-eb87-41f5-ab92-edfc9c193ce9)
+![latte-night-cafe-creenshot 2024-08-14 141647](https://github.com/user-attachments/assets/06f6113a-67f0-4e7a-80e1-1f3b18b283c2)
+![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)
+
+
 ### Validator Testing
 
 - HTML
-  - Passed through the official W3C validator:
-  ![screenshot_2024-07-04_at_13 13 55_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/e2202700-ee23-481d-92ea-9375cf842ddd)
+  - Passed through the official W3C validator: some errors
+![latte-night-cafe-creenshot 2024-08-14 162120](https://github.com/user-attachments/assets/fa72a9ab-204f-44ae-ba03-a07ec26cb3ec)
 
 - CSS
   - Passed through the Jigsaw validator successfully:
-  ![screenshot_2024-07-04_131444_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/99bbee67-aa6d-464d-8a0c-890201499550)
+![latte-night-cafe-creenshot 2024-08-14 162239](https://github.com/user-attachments/assets/0f7c62f8-7253-4d13-a372-39fe7b02c3e6)
 
-- JavaScript
-  - Passed through online JavaScript Validator:
-![screenshot_2024-07-04_131623_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/a0d41777-c972-47da-9f2d-7e9d35609cc9)
+- CI Linter
+![latte-night-cafe-creenshot 2024-08-14 162627](https://github.com/user-attachments/assets/ae32c37d-80e7-42aa-802d-87bda868b8f7)
+![latte-night-cafe-creenshot 2024-08-14 162744](https://github.com/user-attachments/assets/3ad64a17-a7e8-4e02-ad0e-9e740158ed2c)
+
+![latte-night-cafe-creenshot 2024-08-14 162722](https://github.com/user-attachments/assets/4652a315-4a39-47c3-a331-e3ae4c79c300)
+![latte-night-cafe-creenshot 2024-08-14 162657](https://github.com/user-attachments/assets/1c5863a8-eab5-4d07-92e8-ba3b23209447)
+![latte-night-cafe-creenshot 2024-08-14 162640](https://github.com/user-attachments/assets/4ef864e6-ab80-4b45-86da-0dea44f920ac)
 
 - Website Optimization
   - Still need to pass through [Google Lighthouse](TBA)
 
 ### Bugs Fixed
-- __Background Image Missing from Deployed Version__ 
-  - **Issue:** While the background image appeared during checks on the IDE, when the website was deployed the background was a grey box instead.
-  - **Fix:** Suspected it was a filepath issue. Checked the code. There was indeed a sneaky / at the front of the path. Removed this and background image appeared on deployed version.
- 
-![screenshot_2024-07-03_at_14 37 34_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/42fe2091-ea66-4e76-bfae-6602d157469c)
+- __Collapse Navbar when goes into mobile mode__ 
+Need to have nav items drop down
 
-
-
-- __Scoreboard Counter Registering All Mouse Clicks__ 
-  - **Issue:** When excessively clicking on the quiz answers multiple times, the Correct/Incorrect counters would increment by the total number of clicks on that button, rather than just once. This also allowed multiple buttons to be selected if they were clicked fast enough and would then change colour.
-  - **Fix?** We did this.
-  
- ![screenshot_2024-07-03_192242_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/e3462be3-95cd-4567-a04a-f2adb1b037b4)
-
-- __Start Quiz Button Not Working__ 
-  - **Issue:** When the Start Quiz button was clicked instead of the quiz screen appearing, the home screen remained.
-  - **Fix:** Console.log the function make sure that the "click" button was actually firing. Tested this in Chrome Dev Tools using Console. It was firing.
-
-
-### Unfixed Bugs
-
-- __Footer Overlapping Content__ 
-  - **Issue:** The Footer would overlap the content on the page. This resulted in the Home Button and Scoreboard being hidden underneath the Footer (particularly on mobile screen size).
-  - **How would we fix it?:** Use Chrone Dev Tools to play around with padding/margin/positioning to find out why the Footer is behaving this way.
-    
- ![screenshot_2024-07-03_173006_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/0a609fa3-5a1d-46f5-add2-7b11dba47dfc)
 
 
 ## Setup and Running the Application
 
 1. Clone the repository to your local machine or download the HTML, CSS, and JavaScript files.
 2. Open the HTML file in a web browser to start the application.
-3. Enter your name, opt for a timed challenge if desired, and click 'Start Quiz' to begin.
-4. Answer the questions by clicking on one of the choices.
-5. View your score, correct answers, incorrect answers, and best streak at any time during the session.
+3. Sign up and create a booking
 
 
 ## Credits
@@ -165,8 +150,11 @@ __Resources Used and Consulted:__
 - [Bootstrap] (https://getbootstrap.com/) for docs about Bootstrap.
 - Background image from WEBSITE.
 
-__Inspiration Drawn From:__ 
-- Insert websiten name here - [https://www.buzzfeed.com/hanifahrahman/disney-dog-quiz]
+## Media
+<a href="https://www.freepik.com/free-photo/cup-coffee-table-front-street-with-city-lights-background_40970695.htm#fromView=search&page=1&position=39&uuid=64b1e9e8-e30f-4dc8-9008-dd118719555f">Image by vecstock on Freepik</a>
+Photo by Clem Onojeghuo on Unsplash 
+Photo by Alexander Gilbertson on Unsplash 
+
 
 __Special Thanks To:__ 
 - [Spencer Barriball](https://github.com/5pence/demodemo/blob/main/assets/js/script.js)
