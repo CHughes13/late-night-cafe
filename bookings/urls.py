@@ -22,6 +22,6 @@ urlpatterns = [
     # So User can delete an existing booking
     path("delete-booking/<int:pk>/", views.BookingDeleteView.as_view(), name="delete_booking"),
 
-    # List of all Bookings just for admin
-    #path("admin-booking-list/", views.AdminBookingListView.as_view(), name="admin_booking_list"),
+    # Admin Dashboard - list of all the users bookings for the Admin only
+    path("admin/bookings/", views.AdminBookingListView.as_view(), name="admin_dashboard"),
 ]

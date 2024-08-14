@@ -2,9 +2,78 @@
 
 {% block content %}
 
-<!-- admin_booking.html /admin_booking_list content starts here -->
-
 <!-- Admin Dashboard content starts here -->
+
+
+<!-- Displays all user's bookings in an easy to read table-->
+<div class="container mt-4">
+    <h1 class="text-center">All Bookings for Latte Night Cafe</h1>
+    {% if bookings %}
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Table</th>
+                <th>Guests</th>
+                <th>Special Requests</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.booking_id }}</td>
+                <td>{{ booking.user.username }}</td>
+                <td>{{ booking.booking_date }}</td>
+                <td>{{ booking.booking_time }}</td>
+                <td>{{ booking.table_booked }}</td>
+                <td>{{ booking.num_of_guests }}</td>
+                <td>{{ booking.special_requests }}</td>
+                <td>
+                    <!-- Buttons that give the Admin the option to edit or delete all booking -->
+                    <a href="{% url 'update_booking' booking.pk %}" class="btn btn-primary btn-sm">Edit Booking</a>
+                    <a href="{% url 'delete_booking' booking.pk %}" class="btn btn-danger btn-sm">Delete Booking</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- If there are no bookings, this message will display instead -->
+    {% else %}
+    <p class="text-center">No bookings found.</p>
+    {% endif %}
+
+    <!--Create Booking Button -->
+    <div class="text-center">
+        <a href="{% url 'create_booking' %}" class="btn btn-warning btn-lg">Create a Booking</a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- OLD CODE - delete when new code finished
 admin_booking.html /admin_booking_list content starts here
