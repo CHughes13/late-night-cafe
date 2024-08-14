@@ -17,8 +17,19 @@ from django.shortcuts import redirect
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
+# Admin Dashboard - lists bookings for all users for the logged-in site admin
+class AdminBookingListView(generic.ListView):
+    model = Booking
+    template_name = "bookings/admin_dashboard.html"
+    context_object_name = "bookings"
+
+    def get_queryset(self): # Filters bookings so only admin can see
+        return Booking.objects.all.order_by("booking_date", "booking_time") # Orders the all the users bookings by date then time/chronological order
+
+
+
 # User Dashboard - lists bookings for the logged in user
-class BookingListView(generic.ListView):
+class ABookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
@@ -103,7 +114,7 @@ class BookingDeleteView(UserIsOwnerMixin, generic.DeleteView):
 
     def delete(self, request, *args, **kwargs): #This calls the parent class's delete method, which handles the deletion of the object.
         response = super().delete(request, *args, **kwargs)
-        messages.success(self.request, "Your booking has been deleted!")  # # Feedback for user that confirms their booking has been delete
+        messages.success(self.request, "Your booking has been deleted!")  # Feedback for user that confirms their booking has been delete
         return response
 
 
