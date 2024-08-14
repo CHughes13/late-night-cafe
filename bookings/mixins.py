@@ -2,7 +2,7 @@ from django.http import Http404
 
 """
 If an unauthorised user tries to access a booking that they are not the
-owner of, they will recieve a feedback message and be diverted to a 404 page
+owner of, they will be diverted to a 404 page
 """
 
 class UserIsOwnerMixin:
