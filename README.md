@@ -54,58 +54,45 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 ## Features
 
 ### Existing Features
-- __Username Input__
-  - Allows user to enter their name. Gives the quiz a more personalised touch. Quiz will not start without a username – the user will be prompted via an alert to select a username.
+- __Navbar changes depends on who is logged in/out__
+  - Allows personal experince for user. Keeps unauthorized users away from items they shouldn't have access to.
+![latte-night-cafe-creenshot 2024-08-14 140634](https://github.com/user-attachments/assets/ee34f3d0-f160-4552-b32f-def5622d853b)
 
-- __Timer Option__
-  - Offers the user the option play a timed quiz mode which will increase the quiz difficulty level. This can be toggled on/off at on the home screen.
-![screenshot_2024-07-04_at_13 21 36](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/1d3ed57a-99df-49cd-b155-38a76f05dfd3)
+  
+- __Sign In/Out Pages__
+- Easy sign up. Options to include Social media itergration in the future.
+  ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
+![latte-night-cafe-creenshot 2024-08-14 141927](https://github.com/user-attachments/assets/78ad74a0-054e-44c6-8fc7-abd0649f8b6f)
 
-- __Multiple Choice Answer Buttons__
-  - When the user is presented with a question they are provided with four multiple choice buttons to choose from. When the user hovers their mouse cursor over the answer, the button changes to a lighter colour. When an answer is selected, it will either: turn green if it is correct, or it will turn red if it is incorrect and the button displaying the correct answer will turn green.
-![screenshot_2024-07-04_at_13 20 54_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/0eda82ea-44fb-4d64-998d-3a12d6fe61ec)
 
-- __Home Button__ 
-  - This button will allow the user to easily navigate back to the home screen and replay the quiz.
-
-- __Score Tracker__ 
-  - This scoreboard keeps track of the users correct answers, incorrect answers, and their best streak (number of questions they have answered correctly in a row). Tracks and displays scores dynamically, with visual feedback on answers.
- 
-- __Result Screen Message__ 
-  - Personal message based on the score you get.
-![screenshot_2024-07-04_at_13 22 40_360](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/d0847c74-6fa0-4530-a5fc-58124b0985ac)
+- __Text and lopo in top corner = return to homepage on a click__ 
+  - This button will allow the user to easily navigate back to the homescreen.
 
 - __Responsive Design__ 
   - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop.
-![screenshot_2024-07-04_132148_720](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/f1bce015-c6bb-4873-9527-5ce40feca079)
+![latte-night-cafe-creenshot 2024-08-14 143258](https://github.com/user-attachments/assets/6236ecad-6fff-43db-a27e-25566c634126)
+![latte-night-cafe-creenshot 2024-08-14 143313](https://github.com/user-attachments/assets/42c1388a-a116-4761-8cce-579d30257f3c)
 
-- __Footer__ 
+- __Footer (see above)__ 
   - Footer section includes links to the relevant social media sites for Latte Night Cafe To allow for easy navigation, the links open in a new tab.
   - Copyright line includes year of publication and the creator. This allows users to see how up to date the information on the web application is.
   - Features at the bottom of the page throughout (and has a matching colour theme with other elements on the site), this lets the user know they're still on the same webpage.
   - The footer is important as it encourages the user to interact and stay connected with Latte Night Cafe on other social media platforms.
 
-![Screenshot 2024-07-04 132836](https://github.com/CHughes13/CI-Hackathon-2-Hack-and-Cheese/assets/82895994/64b519bc-a391-43fc-8dbd-5656333bf441)
+
 
 
 ### Features Left to Implement
-- __Difficulty Settings__ 
+- __Reviews__ 
   - To give users the choice of quiz difficulty to make the quiz more fun and challenging (this would add replay value). To make the quiz easier, the user could start with 3 answers to choose from instead of 4. Introducing a 50/50 lifeline option that could be used once – this would grey out half of the answers, leaving 1 correct and 1 incorrect.
 
-- __Get More Questions Using an API__ 
+- __About Page__ 
   - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
 
-- __More Categories__ 
-  - Currently the quiz is focused on general knowledge. Branching out to other specific categories adds more entertainment for the user. For example, a dedicated geography-based quiz or one focused on literature.
+ __Menu Page__ 
+  - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
 
-- __Image with Questions__ 
-  - Adding an image underneath each question to create a more appealing and attention-grabbing. Image will relate to the question so the user will be able to easily identify what the theme is and what the question is about.
 
-- __Image on Results Screen__ 
-  - Adding an image on the Results Screen alongside the personalised message will add a more polished look.
-
-- __High Score Table__ 
-  - A table which would display the user's name and score. This would encourage the user to keep playing to gain a new personal best. The user could also challenge their friends and compete against them for the best high score.
 
 
 ## Testing and Debugging
