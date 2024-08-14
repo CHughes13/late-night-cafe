@@ -18,7 +18,7 @@ class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
 # User Dashboard - lists bookings for the logged in user
-class BookingListView(UserIsOwnerMixin, generic.ListView):
+class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
