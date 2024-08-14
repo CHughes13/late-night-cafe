@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm  # Import UserCreationFor
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm # Import local CustomUserCreationForm and Booking Form
-from .mixins import UserIsOwnerMixin, AdminRequiredMixin  # Import mixin - ensures that only the owner of a booking can see/amend it // Admin is required
+from .mixins import UserIsOwnerMixin  # Import mixin - ensures that only the owner of a booking can see/amend it
 from django.shortcuts import redirect
 
 
@@ -31,13 +31,18 @@ class HomePageView(generic.TemplateView):
 
 
 # Admin Dashboard - lists bookings for all users for the logged-in site admin
-class AdminBookingListView(AdminRequiredMixin,, generic.ListView):
+
+class AdminRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_superuser
+        
+class AdminBookingListView(AdminRequiredMixin, generic.ListView):
     model = Booking
     template_name = "bookings/admin_dashboard.html"
     context_object_name = "bookings"
 
     def get_queryset(self): # Filters bookings so only admin can see
-        return Booking.objects.all()order_by("booking_date", "booking_time") # Orders all the users bookings by date then time/chronological order
+        return Booking.objects.all().order_by("booking_date", "booking_time") # Orders all the users bookings by date then time/chronological order
 
 def booking_form(request, booking_id=None):
     if not request.user.is_authenticated:
