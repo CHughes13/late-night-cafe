@@ -7,27 +7,73 @@ from django.contrib.auth.forms import UserCreationForm  # Import UserCreationFor
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm # Import local CustomUserCreationForm and Booking Form
-from .mixins import UserIsOwnerMixin  # Import the mixin - ensures that only the owner of a booking can see and amend it
+from .mixins import UserIsOwnerMixin, AdminRequiredMixin  # Import mixin - ensures that only the owner of a booking can see/amend it // Admin is required
 from django.shortcuts import redirect
 
-# Create your views here
+
 # Note: for Login View = using Django's built-in LoginView
 
+# GENERAL VIEWS
 # Latte Night Cafe Homepage
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
+
+# ADMIN VIEWS
+
+
+# List of all Bookings for Admin - DO THIS NEXT!!!
+# class BookingList(generic.ListView):
+#     queryset = Booking.objects.all().order_by("booking_created_at")
+#     template_name = "bookings/admin_booking_list.html"
+#     queryset = Booking.objects.all()
+#     HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
+
+
 # Admin Dashboard - lists bookings for all users for the logged-in site admin
-class AdminBookingListView(generic.ListView):
+class AdminBookingListView(AdminRequiredMixin,, generic.ListView):
     model = Booking
     template_name = "bookings/admin_dashboard.html"
     context_object_name = "bookings"
 
     def get_queryset(self): # Filters bookings so only admin can see
-        return Booking.objects.all.order_by("booking_date", "booking_time") # Orders the all the users bookings by date then time/chronological order
+        return Booking.objects.all()order_by("booking_date", "booking_time") # Orders all the users bookings by date then time/chronological order
+
+def booking_form(request, booking_id=None):
+    if not request.user.is_authenticated:
+        messages.add_message(request, messages.ERROR, "You need to be logged in to create a booking.")
+        return redirect(reverse("account_login"))
+
+    if booking_id: # Checks to see if booking_id is provided
+        booking = get_object_or_404(Booking, id=booking_id) # If there is a booking id, then the form will populate with data from that existing booking
+    else:
+        booking = None # If there is no booking id, then the form will be blank and new
+
+    # This block handles the form submission
+    if request.method == "POST":
+        form = BookingForm(request.POST, instance=booking)
+        
+        if form.is_valid(): # Checks if form's validation rules are met
+            booking = form.save(commit=False)  # Doesn't commit form to the database yet
+            booking.user = request.user  # Assigns the logged-in user to the booking
+            booking.save()  # Now saves form to the database
+            messages.add_message(request, messages.SUCCESS, "Booking successfully created.")
+            return redirect("admin_dashboard") # Redirects back to Admin Dashboard
+   
+   # This block handles the GET requests and displays the form
+    else:
+        form = BookingForm(instance=booking) # Empty form for user to fill in
+ 
+    # This block renders the form template
+    return render(
+        request,
+        "bookings/booking_form.html",
+        {"form": form, "booking": booking}
+    )
 
 
 
+# USER VIEWS
 # User Dashboard - lists bookings for the logged in user
 class ABookingListView(generic.ListView):
     model = Booking
@@ -73,7 +119,6 @@ def booking_form(request, booking_id=None):
             )
             return redirect("user_dashboard") # User is returned to dashboard where they can see their booking/s
 
-
     # This block handles the GET requests and displays the form
     else:
         form = BookingForm(instance=booking) # Empty form for user to fill in
@@ -118,9 +163,3 @@ class BookingDeleteView(UserIsOwnerMixin, generic.DeleteView):
         return response
 
 
-# List of all Bookings for Admin - DO THIS NEXT!!!
-# class BookingList(generic.ListView):
-#     queryset = Booking.objects.all().order_by("booking_created_at")
-#     template_name = "bookings/admin_booking_list.html"
-#     queryset = Booking.objects.all()
-#     HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
