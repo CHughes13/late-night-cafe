@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
         <div class="container-fluid">
 
-             <!-- Site name and little logo that links back to homepage -->
+            <!-- Site name and little logo that links back to homepage -->
             <a class="navbar-brand" href="{% url 'home' %}">
                 <i class="fas fa-moon icon-style"></i>
                 <span class="brand">Latte Night Cafe</span>
@@ -58,8 +58,8 @@
 
                         <!-- "My Bookings" navbar tab for logged-in users -->
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == my_bookings_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'user_dashboard' %}">My Bookings</a>
+                            <a class="nav-link {% if request.path == my_bookings_url %}active"
+                                aria-current="page{% endif %}" href="{% url 'user_dashboard' %}">My Bookings</a>
                         </li>
 
                         <!-- "Log Out" navbar tab for logged-in users -->
@@ -88,24 +88,23 @@
     </nav>
 
     <!-- displaying Django messages - Code from Code Institute's I Think Therefore I Blog project-->
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
           fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close"
-            data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
 
 
 
-<!-- Lets user know if they are logged in or out -->
+    <!-- Lets user know if they are logged in or out -->
     <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as <strong>{{ user.username }}</strong></p>
@@ -164,7 +163,11 @@
                                 class="fas fa-envelope"></i></a>
                         <a href="tel:+441234567890" target="_blank" rel="noopener"
                             aria-label="Call us on the phone (opens calling app in a new tab)"
-                            title="Call +44 (0) 1234 567 890"><i class="fas fa-phone"></i></a>
+                            title="Call +44 (0) 1234 567 890"> <i class="fas fa-phone"></i></a>
+                            <ul class="text-white text-center">
+                                <li>Call +44 (0) 1234 567 890</li>
+                            </ul>
+                        
                     </div>
                 </div>
             </div>
