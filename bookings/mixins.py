@@ -20,14 +20,3 @@ class UserIsOwnerMixin:
             raise PermissionDenied("You do not have permission to edit or delete this booking.")
 
         return super().dispatch(request, *args, **kwargs)
-
-
-
-
-
-#class UserIsOwnerMixin:
-   # def dispatch(self, request, *args, **kwargs):
-       # obj = self.get_object()
-       # if obj.user != self.request.user:
-           # raise Http404("You do not have permission to access this page.")
-      #  return super().dispatch(request, *args, **kwargs)
