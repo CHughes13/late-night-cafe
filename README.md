@@ -1,5 +1,6 @@
 # Latte Night Cafe
-INSERT FINAL SCREENSHOT OF HOMEPAGE HERE on desktop, tablet and mobile - ask Mo where he got the template from
+![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
+
 
 ## Overview
 
@@ -17,50 +18,36 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 - Django
 - [Balsamiq](https://balsamiq.com/) used to create wireframes
 - ChatGPT and Blackbox AI used throughout for coding advice and inspiration
-- [Jamboard](https://jamboard.google.com/d/1XjsnzAiuQ_O_WgiFDCjuUN0aw7v927GWzUWEdflyDuE/viewer?ts=667ec8a4&pli=1&f=1) (digital interactive whiteboard)
-- [Trello](https://trello.com/b/CIy6Ngeo/hackathon-2-hack-cheese-project-board) (Project board)
+- [Miro Board](https://miro.com/app/board/uXjVKrc3AA4=/) (digital interactive whiteboard)
+- [Github Project Board](https://github.com/users/CHughes13/projects/2)
 
-![Trello Project Board](assets/images/Hack-&-Cheese-Project-Board.png)
+![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
+
 
 ## UX/UI
 ### Site Goals
-The goal of Latte Night Cafe is ....
+The goal of Latte Night Cafe is to provide a warm, cosy retreat to those who prefer want to visit coffee shops at night. Minimalic and simple, the aim was to make users feel comfortable and at ease.
+![latte-night-cafe-creenshot 2024-08-14 163053](https://github.com/user-attachments/assets/0ee3f107-2872-4d03-af8e-7ede1debbffe)
+![latte-night-cafe-CAG Contrast checker](https://github.com/user-attachments/assets/d80c3c4f-1b8c-4450-9951-185d300928e7)
+
+The colours are wamr and comforting. The main issue with the contrast check was the subtitle here. A text background was added to help it stand out more. This is something that could be altered in the future.
 
 ###User Stories
-As a site user/customer:
-- I want to do this because this
-- I want to do this because this
-- I want to do this because this
-- I want to do this because this
-
-As the site administrator:
-- I want to do this because this
-- I want to do this because this
-- I want to do this because this
-- I want to do this because this
+Please see project board.
 
 ## Initial Planning Stage - Wireframes
 
 Here are the initial wireframes for the Latte Night Cafe application (created using Balsamiq), along with screen shots of the initial design. These provide a visual outline of the planned layout and functionality.
 
-#### Desktop Homepage
-![Welcome Screen Wireframe](assets/images/-choices-desktop-wireframes-welcome-screen.png)
+#### Desktop
+![Screenshot 2024-08-14 164448](https://github.com/user-attachments/assets/7a6456da-7bf4-45a8-b47c-9c1e1f5e6f16)
+![Screenshot 2024-08-14 164453](https://github.com/user-attachments/assets/20aaea42-e62c-4cc7-a02a-e8130fef3440)
+![Screenshot 2024-08-14 164501](https://github.com/user-attachments/assets/924676c3-d431-41af-9f87-d94210321b46)
+![Screenshot 2024-08-14 164507](https://github.com/user-attachments/assets/9c215e4e-e270-452a-bfe9-8fb3304cbbc7)
 
-#### Mobile Homepage
-![Mobile View Wireframes](assets/images/-choices-phone-wireframes.png)
 
-
-## Initial Design
-These are screenshots of the project around the beginning of development:
-
-![Welcome screen screenshot](assets/images/cheesy-choices-initial-design-welcome-screen.png)
--
-![Quiz screen screenshot](assets/images/cheesy-choices-initial-design-quiz-screen.png)
--
-![Alert message screenshot](assets/images/cheesy-choices-initial-design-alert-message.png)
--
-![incorrect screen screenshot](assets/images/cheesy-choices-initial-design-incorrect-screen.png)
-
+#### Mobile
+![Screenshot 2024-08-14 164512](https://github.com/user-attachments/assets/f5d70693-9488-42a7-a77f-04917c5676c5)
 
 
 
