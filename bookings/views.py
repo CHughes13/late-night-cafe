@@ -21,15 +21,6 @@ class HomePageView(generic.TemplateView):
 
 # ADMIN VIEWS
 
-
-# List of all Bookings for Admin - DO THIS NEXT!!!
-# class BookingList(generic.ListView):
-#     queryset = Booking.objects.all().order_by("booking_created_at")
-#     template_name = "bookings/admin_booking_list.html"
-#     queryset = Booking.objects.all()
-#     HELP FOR FILTERS: queryset = Post.objects.filter(https://www.w3schools.com/django/django_queryset_filter.php)
-
-
 # Admin Dashboard - lists bookings for all users for the logged-in site admin
 
 class AdminBookingListView(SuperuserRequiredMixin, generic.ListView): # Admin = Superuser for now, can expand permissions to staff Admin when business expands
@@ -160,7 +151,11 @@ class BookingUpdateView(UserIsOwnerMixin, generic.UpdateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/update_booking.html"
-    success_url = reverse_lazy("user_dashboard")  # Will redirect to user dashboard
+
+    def get_success_url(self): # if it's the admin/superuser making the booking amend they will be redirected back to the Admin Dashboard
+        if self.request.user.is_superuser:
+            return reverse_lazy("admin_dashboard")
+        return reverse_lazy("user_dashboard")
 
     def form_valid(self, form):
         try:
@@ -181,6 +176,11 @@ class BookingDeleteView(UserIsOwnerMixin, generic.DeleteView):
     model = Booking
     template_name = "bookings/confirm_delete.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
+
+    def get_success_url(self): # if it's the admin/superuser making the booking amend they will be redirected back to the Admin Dashboard
+        if self.request.user.is_superuser:
+            return reverse_lazy("admin_dashboard")
+        return reverse_lazy("user_dashboard")
 
     def delete(self, request, *args, **kwargs): #This calls the parent class's delete method, which handles the deletion of the object.
         response = super().delete(request, *args, **kwargs)
