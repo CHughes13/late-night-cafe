@@ -16,7 +16,7 @@ from django.shortcuts import redirect
 class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
-# User Dashboard
+# User Dashboard - lists bookings for the logged in user
 class BookingListView(generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
@@ -69,7 +69,6 @@ def booking_form(request, booking_id=None):
     # This block renders the form template
     return render(
         request,
-        # "bookings/booking_detail.html",
         "bookings/booking_form.html",
         {"form": form, "booking": booking},
     )
