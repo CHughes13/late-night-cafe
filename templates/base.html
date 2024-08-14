@@ -56,6 +56,7 @@
                             <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'home' %}">Home</a>
                         </li>
+
                         {% if user.is_authenticated %}
 
                         <!-- "My Bookings" navbar tab for logged-in users -->
@@ -64,13 +65,14 @@
                                 aria-current="page{% endif %}" href="{% url 'user_dashboard' %}">My Bookings</a>
                         </li>
 
+
                         {% if user.is_superuser %}
                         <!-- "Admin Dashboard" navbar tab for Admins only -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == admin_dashboard_url %}active"
                                 aria-current="page{% endif %}" href="{% url 'admin_dashboard' %}">Admin Dashboard</a>
                         </li>
-
+                        {% endif %}
 
                         <!-- "Log Out" navbar tab for logged-in users -->
                         <li class="nav-item">
