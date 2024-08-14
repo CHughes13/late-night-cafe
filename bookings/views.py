@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm  # Import UserCreationFor
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm # Import local CustomUserCreationForm and Booking Form
-from .mixins import UserIsOwnerMixin, SuperuserRequiredMixin  # Import booking owner // Important SuperuserRequired
+from .mixins import UserIsOwnerMixin # Import mixins.py
 from django.shortcuts import redirect
 
 
