@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm  # Import UserCreationFor
 from django.urls import reverse_lazy # Handles URL redirection
 from .models import Booking # Import local Booking model
 from .forms import CustomUserCreationForm, BookingForm # Import local CustomUserCreationForm and Booking Form
+from .mixins import UserIsOwnerMixin  # Import the mixin - ensures that only the owner of a booking can see and amend it
 from django.shortcuts import redirect
 
 # Create your views here
@@ -17,7 +18,7 @@ class HomePageView(generic.TemplateView):
     template_name = "bookings/index.html"
 
 # User Dashboard - lists bookings for the logged in user
-class BookingListView(generic.ListView):
+class BookingListView(UserIsOwnerMixin, generic.ListView):
     model = Booking
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
@@ -74,7 +75,7 @@ def booking_form(request, booking_id=None):
     )
 
 # Update/Edit a Booking
-class BookingUpdateView(generic.UpdateView):
+class BookingUpdateView(UserIsOwnerMixin, generic.UpdateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/update_booking.html"
@@ -95,7 +96,7 @@ class BookingUpdateView(generic.UpdateView):
         return super().form_invalid(form)
 
 # Delete a Booking
-class BookingDeleteView(generic.DeleteView):
+class BookingDeleteView(UserIsOwnerMixin, generic.DeleteView):
     model = Booking
     template_name = "bookings/confirm_delete.html"
     success_url = reverse_lazy("user_dashboard") # Will redirect to user dashboard
