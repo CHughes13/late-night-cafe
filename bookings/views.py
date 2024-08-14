@@ -38,14 +38,14 @@ class AdminBookingListView(SuperuserRequiredMixin, generic.ListView): # Admin = 
     context_object_name = "bookings"
     success_url = reverse_lazy("admin_dashboard")
 
-    def get_queryset(self): # Filters bookings so only Admin can see
-        queryset = Booking.objects.all()
+    def get_queryset(self): 
+        queryset = Booking.objects.all() # Filters bookings so Admin can see all bookings
 
         # Ability to sort bookings
-        sort_by = self.request.GET.get('sort_by', 'booking_date')  # Default sort field
-        sort_order = self.request.GET.get('sort_order', 'asc')     # Default sort order
+        sort_by = self.request.GET.get('sort_by', 'booking_date')  # Default sort by booking date
+        sort_order = self.request.GET.get('sort_order', 'asc')     # Default sort order is ascending
 
-        if sort_order == 'desc':
+        if sort_order == 'desc': # If sort order is descending
             sort_by = f'-{sort_by}'
 
         queryset = queryset.order_by(sort_by)
@@ -94,8 +94,19 @@ class BookingListView(generic.ListView):
     template_name = "bookings/user_dashboard.html"
     context_object_name = "bookings"
 
-    def get_queryset(self): # Filters bookings so current user can only see their own
-        return Booking.objects.filter(user=self.request.user).order_by("booking_date", "booking_time") # Orders the users bookings by date then time/chronological order
+    def get_queryset(self): # Ability to sort bookings
+
+        queryset = Booking.objects.filter(user=self.request.user) # Filters bookings so current user can only see their own
+        sort_by = self.request.GET.get('sort_by', 'booking_date')  # Default sort by booking date 
+        sort_order = self.request.GET.get('sort_order', 'asc')     # Default sort order is ascending 
+
+        if sort_order == 'desc': # If sort order is descending
+            sort_by = f'-{sort_by}'
+
+        queryset = queryset.order_by(sort_by)
+
+        return queryset
+
 
 # Create a Booking Form
 class BookingCreateView(generic.CreateView):
