@@ -2,6 +2,22 @@
 ![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
 
 
+## Table of Contents
+1. [UX/UI](#uxui)
+2. [Site Goals](#site-goals)
+3. [User Stories](#user-stories)
+4. [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
+   i. [Desktop](#desktop)
+   ii. [Mobile](#mobile)
+5. [Features](#features)
+   i. [Existing Features](#existing-features)
+   ii. [Features Left to Implement](#features-left-to-implement)
+6. [Testing and Debugging](#testing-and-debugging)
+   i. [Validator Testing](#validator-testing)
+   ii. [Bugs Fixed](#bugs-fixed)
+7. [Setup and Running the Application](#setup-and-running-the-application)
+8. [Credits](#credits)
+
 ## Overview
 
 This is a table booking system for Latte Night Cafe, a late night cafe. Usually only clubs or pubs are open after dark, but not everyone is a party animal. This is a venue for the night owls who want to relax with their friends, or even get some work done, in at a calm and cosy place during the evening and early hours of the morning. Offering customers the chance to book a space allows them to secure a quiet nook for themselves in the early hours of the morning when traditional cafes are normally closed. It also gives them peace of mind that they're in a safe space away from loud music and alcohol-fuelled antics so they can unwind.
@@ -23,6 +39,7 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 
 ![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
 
+[Back to top](#)
 
 ## UX/UI
 ### Site Goals
@@ -30,9 +47,11 @@ The goal of Latte Night Cafe is to provide a warm, cosy retreat to those who pre
 ![latte-night-cafe-creenshot 2024-08-14 163053](https://github.com/user-attachments/assets/0ee3f107-2872-4d03-af8e-7ede1debbffe)
 ![latte-night-cafe-CAG Contrast checker](https://github.com/user-attachments/assets/d80c3c4f-1b8c-4450-9951-185d300928e7)
 
-The colours are wamr and comforting. The main issue with the contrast check was the subtitle here. A text background was added to help it stand out more. This is something that could be altered in the future.
+The colours are warm and comforting. The main issue with the contrast check was the subtitle here. A text background was added to help it stand out more. This is something that could be altered in the future.
 
-###User Stories
+[Back to top](#)
+
+### User Stories
 Please see project board.
 
 ## Initial Planning Stage - Wireframes
@@ -49,7 +68,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 #### Mobile
 ![Screenshot 2024-08-14 164512](https://github.com/user-attachments/assets/f5d70693-9488-42a7-a77f-04917c5676c5)
 
-
+[Back to top](#)
 
 ## Features
 
@@ -60,12 +79,12 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
   
 - __Sign In/Out Pages__
-- Easy sign up. Options to include Social media itergration in the future.
+- Easy sign up. Options to include social media itergration in the future.
   ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
 ![latte-night-cafe-creenshot 2024-08-14 141927](https://github.com/user-attachments/assets/78ad74a0-054e-44c6-8fc7-abd0649f8b6f)
 
 
-- __Text and lopo in top corner = return to homepage on a click__ 
+- __Text and logo in top corner = return to homepage on a click__ 
   - This button will allow the user to easily navigate back to the homescreen.
 
 - __Responsive Design__ 
@@ -79,7 +98,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
   - Features at the bottom of the page throughout (and has a matching colour theme with other elements on the site), this lets the user know they're still on the same webpage.
   - The footer is important as it encourages the user to interact and stay connected with Latte Night Cafe on other social media platforms.
 
-
+[Back to top](#)
 
 
 ### Features Left to Implement
@@ -92,7 +111,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
  __Menu Page__ 
   - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
 
-
+[Back to top](#)
 
 
 ## Testing and Debugging
@@ -124,11 +143,13 @@ Create test.py files and contaST MANUAL TESTING through
 - Website Optimization
   - Still need to pass through [Google Lighthouse](TBA)
 
+[Back to top](#)
+
 ### Bugs Fixed
 - __Collapse Navbar when goes into mobile mode__ 
 Need to have nav items drop down
 
-
+[Back to top](#)
 
 ## Setup and Running the Application
 
@@ -136,6 +157,14 @@ Need to have nav items drop down
 2. Open the HTML file in a web browser to start the application.
 3. Sign up and create a booking
 
+## Deployment
+- Repository created in Github and updated in Gitpod
+- Deployed using Heroku
+- Connected Secret Keys to config vars
+- Connected to the Code Institute PostGres Database
+- Connected to Cloudinary (static file/assests host)
+
+[Back to top](#)
 
 ## Credits
 __Resources Used and Consulted:__ 
@@ -166,3 +195,5 @@ __Special Thanks To:__
 - Ian Stokes
 - Christopher Hughes
 - Sebastian Hughes
+
+[Back to top](#)
