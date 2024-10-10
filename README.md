@@ -1,7 +1,7 @@
 # Latte Night Cafe
 ![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
 
-## A booking system for late night cafe with validators to ensure there are no double bookings.
+### Booking system for a late night cafe.
 
 ***
 
@@ -14,7 +14,7 @@
 - [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
   - [Desktop](#desktop)
   - [Mobile](#mobile)
-- [Initial Planning Stage - Database](#initial-planning-stage---databse)
+- [Initial Planning Stage - Databases](#initial-planning-stage---databases)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Features Left to Implement](#features-left-to-implement)
@@ -26,9 +26,7 @@
 - [Credits](#credits)
 
 ## Introduction
-
-This is a table booking system for Latte Night Cafe, a late night cafe. Usually only clubs or pubs are open after dark, but not everyone is a party animal. This is a venue for the night owls who want to relax with their friends, or even get some work done, in at a calm and cosy place during the twilight hours. Offering customers the chance to book a space allows them to secure a quiet nook for themselves in the early hours of the morning when traditional cafes are normally closed. It also gives them peace of mind that they're in a safe space away from loud music and alcohol-fuelled antics so they can unwind.
-
+This project is a table booking system for Latte Night Cafe, a cosy venue for night owls who want to relax with their friends, or even get some work done, in at a calm place during the twilight hours. It allows customers to reserve a quiet spot during late hours when traditional cafes are normally closed, offering peace of mind away from noisy, alcohol-fuelled environments.
 
 This web application was created and built by Christina Hughes - [GitHub](https://github.com/CHughes13), [LinkedIn](https://www.linkedin.com/in/christina-hughes-50233041/)
 
@@ -38,13 +36,13 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 
 - HTML5
 - CSS3
-- JavaScript
-- Bootstrap 5.3.3
-- Django
+- JavaScript used to make the website dynamic and include client-side validation
+- Bootstrap 5.3.3 used as it offers pre-built components that speed up development, such as nav bar styles and responsiveness
+- Django framework used due to its convienient in-built features and how it makes database interactions easier
 - [Balsamiq](https://balsamiq.com/) used to create wireframes
-- ChatGPT and Blackbox AI used throughout for coding advice and inspiration
-- [Miro Board](https://miro.com/app/board/uXjVKrc3AA4=/) (digital interactive whiteboard)
-- [Github Project Board](https://github.com/users/CHughes13/projects/2)
+- ChatGPT and Blackbox AI used throughout for coding advice, inspiration, and troubleshooting
+- [Miro Board](https://miro.com/app/board/uXjVKrc3AA4=/) (digital interactive whiteboard) used to plan out a design board and also create the entity relationship diagram
+- [Github Project Board](https://github.com/users/CHughes13/projects/2) used as project management tool to keep track of user stories
 
 [Back to top](#)
 
@@ -52,7 +50,7 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 
 ## UX/UI
 ### Site Goals
-The goal of Latte Night Cafe is to provide a warm, cosy retreat to those who prefer want to visit coffee shops at night. Minimalic and simple, the aim was to make users feel comfortable and at ease.
+The goal of Latte Night Cafe is to provide a warm, cosy retreat to those who prefer want to visit coffee shops at night. Minimalistic and simple, the aim was to make users feel comfortable and at ease.
 ![latte-night-cafe-creenshot 2024-08-14 163053](https://github.com/user-attachments/assets/0ee3f107-2872-4d03-af8e-7ede1debbffe)
 ![latte-night-cafe-CAG Contrast checker](https://github.com/user-attachments/assets/d80c3c4f-1b8c-4450-9951-185d300928e7)
 
@@ -63,6 +61,35 @@ The colours are warm and comforting. The main issue with the contrast check was 
 ### User Stories
 Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1) for full details.  
 ![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
+
+__As a user:__
+- I want to register an account so that I can make a booking and keep track of my past/future bookings.
+  - A user can create and register an account.
+  - The user can then log in.
+  - When the user is logged in they can make a booking.
+
+- I want to be able to easily book a table so that I can reserve a spot for my visit.
+  - User can create, edit/update, and cancel their booking with ease.
+ 
+- I want to see all the bookings I have made in one place so that I can keep track of them and see when I was at the venue previously.
+  - User has access to their own dashboard where they can sort their past bookings, as well as create, edit/update, and cancel their booking with ease.
+ 
+- I want to be able easily contact the venue and see opening times.
+  - Opening times and location need to be obviously visible.
+  - Several options to contact the venue, including social media, email, and phone.
+
+__As a site admin:__
+- I want to be able to create, read, update, and delete all bookings so that I can successfully manage my business. This will help me know when the cafe will be busier and when I need to schedule staff.
+  - Site admin has access to their own dashboard where they can sort through all users bookings, as well as create, edit/update, and cancel any booking with ease.
+ 
+- I want customers to be able to easily contact the venue and see opening times.
+  - Opening times and location need to be obviously visable.
+  - Several ways in which the user can contact the venue, including social media, email, and phone.
+ 
+- I want the booking system to automatically disallow invalid or double bookings to save me time.
+  - Add validators to the "Create a booking" page to ensure double bookings can't occur (table number and timeslots).
+  - Clearly provide automatic feedback to the user so they know what went wrong and what to do next so they can successfully make a reservation.
+
 
 
 ## Initial Planning Stage - Wireframes
@@ -83,7 +110,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 ***
 
-## Initial Planning Stage - Database
+## Initial Planning Stage - Databases
 
 Using Miro, I created an entity relationship diagram with the following question in mind: "What information do I need when someone makes a reservation?"
 
@@ -161,12 +188,12 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
 
 ### Existing Features
 - __Navbar changes depends on who is logged in/out__
-  - Allows personal experince for user. Keeps unauthorized users away from items they shouldn't have access to.
+  - Allows personal experience for the user. Keeps unauthorized users away from items they shouldn't have access to.
 ![latte-night-cafe-creenshot 2024-08-14 140634](https://github.com/user-attachments/assets/ee34f3d0-f160-4552-b32f-def5622d853b)
 
   
 - __Sign In/Out Pages__
-  - Easy sign up. Options to include social media itergration in the future.
+  - Easy sign up. Options to include social media integration in the future.
 ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
 ![latte-night-cafe-creenshot 2024-08-14 141927](https://github.com/user-attachments/assets/78ad74a0-054e-44c6-8fc7-abd0649f8b6f)
 
@@ -209,7 +236,7 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
 Using the MoSCoW method, it was determined that these features weren't essential to create a MVP but are more "should-have" and "could-have". Due to time constraintents these features were left out, but they would make great additions to the application in the future.
 
 - __About Page__ - Should Have
-  - A more in-depth intro about the cafe and its philosophy to build its brand identiy. Include images of the cafe, staff, food, and drink so future customers know what to expect. Could also include a "How to find us" map. This page would add significant value but at the moment the contact details in the footer cover this.
+  - A more in-depth introduction about the cafe and its philosophy to build its brand identity. Include images of the cafe, staff, food, and drink so future customers know what to expect. Could also include a "How to find us" map. This page would add significant value but at the moment the contact details in the footer cover this.
 
 - __Menu Page__ - Could Have
   - A page listing the food and drink items available, as well as their cost. This allows potential customers to scope out the offerings of the Latte Night Cafe in advance and decide if it's the place for them. Could display this information as a table, list, or PDF/image.
@@ -218,7 +245,7 @@ Using the MoSCoW method, it was determined that these features weren't essential
   - Form for registered users to leave a review of the cafe. These could then be displayed on the homepage as a carousel.
  
 - __Social Media Registration/Sign In Option__ - Won't Have (for now)
-  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. More for convienience than a necesaaity, but would make for a better user experience. At the moment using django's built-in sign up and admin works just fine. 
+  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. More for convenience than a necessity, but would make for a better user experience. At the moment using django's built-in sign up and admin works just fine. 
  
 - __Custom Error Screens__ - Won't Have (for now)
   - Currently Django custom error screens are being used for 404, 500, etc. so this feature was not a priority in the first iteration of the project. However, when there is more time, it is definitely more fun to have a personalise and branded error page and you can then direct the user back to the homepage (better UX/UI).  
@@ -271,7 +298,7 @@ __Result:__ Pass
 
 ### Bugs Fixed
 - __Collapse Navbar when goes into mobile mode__ 
-Need to have nav items drop down.
+Navigation items should drop down.
 
 - __Some Font Awesome icons not appearing__ 
 The social media icons were appearing, but the speech bubble icons either side of the "Contact us:" text were not. After some investigation, it turns out that the version of Font Awesome that was linked to in the stylesheet was not the same one listed on the icon (different versions of icons have slightly different names and versions).  
@@ -293,6 +320,7 @@ The social media icons were appearing, but the speech bubble icons either side o
 
 ## Deployment
 - Repository created in Github and updated in Gitpod
+- Install Django framework and Python packages
 - Deployed using Heroku
 - Connected Secret Keys to config vars
 - Connected to the Code Institute PostGres Database
