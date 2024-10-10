@@ -1,7 +1,8 @@
-# Latte Night Cafe
-![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
+# Latte Night Cafe  
+### Booking system for a late night cafe  
+![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)  
 
-### Booking system for a late night cafe
+
 
 ***
 
@@ -23,14 +24,21 @@
   - [Bugs Fixed](#bugs-fixed)
 - [Setup and Running the Application](#setup-and-running-the-application)
 - [Deployment](#deployment)
-- [Credits](#credits)
+- [Credits](#credits)  
+
+
+[Back to top](#)
+
+*** 
 
 ## Introduction
 This project is a table booking system for Latte Night Cafe, a cosy venue for night owls who want to relax with their friends, or even get some work done, in at a calm place during the twilight hours. It allows customers to reserve a quiet spot during late hours when traditional cafes are normally closed, offering peace of mind away from noisy, alcohol-fuelled environments.
 
 This web application was created and built by Christina Hughes - [GitHub](https://github.com/CHughes13), [LinkedIn](https://www.linkedin.com/in/christina-hughes-50233041/)
 
-***
+[Back to top](#)
+
+*** 
 
 ## Technologies Used
 
@@ -58,7 +66,8 @@ The colours are warm and comforting. The main issue with the contrast check was 
 
 [Back to top](#)
 
-***  
+***    
+  
 ### User Stories  
 ![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)  
 
@@ -236,6 +245,8 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
 
 [Back to top](#)
 
+***
+
 
 ### Features Left to Implement
 Using the MoSCoW method, it was determined that these features weren't essential to create a MVP but are more "should-have" and "could-have". Due to time constraintents these features were left out, but they would make great additions to the application in the future.
@@ -257,7 +268,7 @@ Using the MoSCoW method, it was determined that these features weren't essential
 
 [Back to top](#)
 
-***
+***  
 
 ## Testing and Debugging
 
@@ -276,9 +287,12 @@ __Result:__ Pass
 __Test:__ Booking appears in user dashboard.  
 __Expectation:__ Once booking is made and validated, the user will be redirected to their dashboard which shows all their bookings ever made.  
 __Result:__ Pass  
-![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)
+![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)  
 
+[Back to top](#)  
 
+***  
+  
 ### Validator Testing
 
 - HTML
@@ -300,6 +314,8 @@ __Result:__ Pass
   - Still need to pass through [Google Lighthouse](TBA)
 
 [Back to top](#)
+
+***
 
 ### Bugs Fixed
 - __Collapse Navbar when goes into mobile mode__   
