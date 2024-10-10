@@ -3,24 +3,26 @@
 
 
 ## Table of Contents
-1. [UX/UI](#uxui)
-2. [Site Goals](#site-goals)
-3. [User Stories](#user-stories)
-4. [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
-   i. [Desktop](#desktop)
-   ii. [Mobile](#mobile)
-5. [Features](#features)
-   i. [Existing Features](#existing-features)
-   ii. [Features Left to Implement](#features-left-to-implement)
-6. [Testing and Debugging](#testing-and-debugging)
-   i. [Validator Testing](#validator-testing)
-   ii. [Bugs Fixed](#bugs-fixed)
-7. [Setup and Running the Application](#setup-and-running-the-application)
-8. [Credits](#credits)
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [UX/UI](#uxui)
+- [Site Goals](#site-goals)
+- [User Stories](#user-stories)
+- [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Features Left to Implement](#features-left-to-implement)
+- [Testing and Debugging](#testing-and-debugging)
+  - [Validator Testing](#validator-testing)
+  - [Bugs Fixed](#bugs-fixed)
+- [Setup and Running the Application](#setup-and-running-the-application)
+- [Credits](#credits)
 
-## Overview
+## Introduction
 
-This is a table booking system for Latte Night Cafe, a late night cafe. Usually only clubs or pubs are open after dark, but not everyone is a party animal. This is a venue for the night owls who want to relax with their friends, or even get some work done, in at a calm and cosy place during the evening and early hours of the morning. Offering customers the chance to book a space allows them to secure a quiet nook for themselves in the early hours of the morning when traditional cafes are normally closed. It also gives them peace of mind that they're in a safe space away from loud music and alcohol-fuelled antics so they can unwind.
+This is a table booking system for Latte Night Cafe, a late night cafe. Usually only clubs or pubs are open after dark, but not everyone is a party animal. This is a venue for the night owls who want to relax with their friends, or even get some work done, in at a calm and cosy place during the twilight hours. Offering customers the chance to book a space allows them to secure a quiet nook for themselves in the early hours of the morning when traditional cafes are normally closed. It also gives them peace of mind that they're in a safe space away from loud music and alcohol-fuelled antics so they can unwind.
 
 
 This web application was created and built by Christina Hughes - [GitHub](https://github.com/CHughes13), [LinkedIn](https://www.linkedin.com/in/christina-hughes-50233041/)
@@ -87,10 +89,12 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 - __Text and logo in top corner = return to homepage on a click__ 
   - This button will allow the user to easily navigate back to the homescreen.
 
+
 - __Responsive Design__ 
   - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop.
 ![latte-night-cafe-creenshot 2024-08-14 143258](https://github.com/user-attachments/assets/6236ecad-6fff-43db-a27e-25566c634126)
 ![latte-night-cafe-creenshot 2024-08-14 143313](https://github.com/user-attachments/assets/42c1388a-a116-4761-8cce-579d30257f3c)
+
 
 - __Footer (see above)__ 
   - Footer section includes links to the relevant social media sites for Latte Night Cafe To allow for easy navigation, the links open in a new tab.
@@ -102,21 +106,26 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 
 ### Features Left to Implement
-- __Reviews__ 
-  - To give users the choice of quiz difficulty to make the quiz more fun and challenging (this would add replay value). To make the quiz easier, the user could start with 3 answers to choose from instead of 4. Introducing a 50/50 lifeline option that could be used once – this would grey out half of the answers, leaving 1 correct and 1 incorrect.
+
 
 - __About Page__ 
-  - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
+  - A more in-depth intro about the cafe and its philosophy to build its brand identiy. Include images of the cafe, staff, food, and drink so future customers know what to expect. Could also include a "How to find us" map.
 
- __Menu Page__ 
-  - Currently the quiz has the questions hardcoded into it. To provide a wider variety of questions it would be good to find a suitable quiz/question API, such as [Open Trivia Database](https://opentdb.com/)
+- __Menu Page__ 
+  - A page listing the food and drink items available, as well as their cost. This allows potential customers to scope out the offerings of the Latte Night Cafe in advance and decide if it's the palce for them. Could display this information as a table, list, or PDF/image.
+ 
+- __Reviews__ 
+  - Form for registered users to leave a review of the cafe. These could then be displayed on the homepage as a carousel.
+ 
+- __Social Media Registration/Sign In Option__ 
+  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience.   
 
 [Back to top](#)
 
 
 ## Testing and Debugging
 
-Create test.py files and contaST MANUAL TESTING through
+Created test.py files and constant manual testing throughout.
 ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/11b59ef1-eb87-41f5-ab92-edfc9c193ce9)
 ![latte-night-cafe-creenshot 2024-08-14 141647](https://github.com/user-attachments/assets/06f6113a-67f0-4e7a-80e1-1f3b18b283c2)
 ![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)
@@ -147,7 +156,7 @@ Create test.py files and contaST MANUAL TESTING through
 
 ### Bugs Fixed
 - __Collapse Navbar when goes into mobile mode__ 
-Need to have nav items drop down
+Need to have nav items drop down.
 
 [Back to top](#)
 
@@ -162,21 +171,21 @@ Need to have nav items drop down
 - Deployed using Heroku
 - Connected Secret Keys to config vars
 - Connected to the Code Institute PostGres Database
-- Connected to Cloudinary (static file/assests host)
+- Connected to [Cloudinary](https://cloudinary.com/) (static file/assests host)
 
 [Back to top](#)
 
 ## Credits
 __Resources Used and Consulted:__ 
 - [ChatGPT](https://openai.com/chatgpt/) used throughout for coding advice and inspiration.
-- [Blackbox AI] (https://www.blackbox.ai/) used throughout for coding advice and inspiration.
+- [Blackbox AI](https://www.blackbox.ai/) used throughout for coding advice and inspiration.
 - [Font Awesome](https://fontawesome.com/) for the social media icons in footer.
 - [Favicon.io](https://favicon.io/) - online favicon generator used to draw favicon.
 - Angela Yu's [The Complete 2024 Web Development Bootcamp course on Udemy](https://www.udemy.com/course/the-complete-web-development-bootcamp) - reviewed videos to brush up on Python.
 - [Stack Overflow](https://stackoverflow.com/) for troubleshooting and understanding coding concepts.
-- [MDN web docs] (https://developer.mozilla.org/) for helpful guides on all things coding.
-- [W3Schools] (https://www.w3schools.com/) for helpful guides on all things coding.
-- [Bootstrap] (https://getbootstrap.com/) for docs about Bootstrap.
+- [MDN web docs](https://developer.mozilla.org/) for helpful guides on all things coding.
+- [W3Schools](https://www.w3schools.com/) for helpful guides on all things coding.
+- [Bootstrap](https://getbootstrap.com/) for docs about Bootstrap.
 - Background image from WEBSITE.
 
 ## Media
