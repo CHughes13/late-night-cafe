@@ -28,6 +28,8 @@ This is a table booking system for Latte Night Cafe, a late night cafe. Usually 
 
 This web application was created and built by Christina Hughes - [GitHub](https://github.com/CHughes13), [LinkedIn](https://www.linkedin.com/in/christina-hughes-50233041/)
 
+***
+
 ## Technologies Used
 
 - HTML5
@@ -43,6 +45,8 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 ![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
 
 [Back to top](#)
+
+***
 
 ## UX/UI
 ### Site Goals
@@ -72,6 +76,8 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 ![Screenshot 2024-08-14 164512](https://github.com/user-attachments/assets/f5d70693-9488-42a7-a77f-04917c5676c5)
 
 [Back to top](#)
+
+***
 
 ## Features
 
@@ -126,18 +132,25 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 [Back to top](#)
 
+***
 
 ## Testing and Debugging
 
 Created test.py files and constant manual testing throughout.
 
-__Test:__ Create a booking when not logged in. __Expectation:__ User will be prompted to log in. __Result:__ Pass
+__Test:__ Create a booking when not logged in.  
+__Expectation:__ User will be prompted to log in.  
+__Result:__ Pass  
 ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/11b59ef1-eb87-41f5-ab92-edfc9c193ce9)
 
-__Test:__ Create a booking for a date in the past. __Expectation:__ User will be prompted select another date. __Result:__ Pass
+__Test:__ Create a booking for a date in the past.  
+__Expectation:__ User will be prompted select another date.  
+__Result:__ Pass  
 ![latte-night-cafe-creenshot 2024-08-14 141647](https://github.com/user-attachments/assets/06f6113a-67f0-4e7a-80e1-1f3b18b283c2)
 
-__Test:__ Booking appears in user dashboard. __Expectation:__ Once booking is made and validated, the user will be redirected to their dashboard which shows all their bookings ever made. __Result:__ Pass
+__Test:__ Booking appears in user dashboard.  
+__Expectation:__ Once booking is made and validated, the user will be redirected to their dashboard which shows all their bookings ever made.  
+__Result:__ Pass  
 ![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)
 
 
@@ -170,6 +183,8 @@ Need to have nav items drop down.
 
 [Back to top](#)
 
+***
+
 ## Setup and Running the Application
 
 1. Clone the repository to your local machine or download the HTML, CSS, and JavaScript files.
@@ -187,6 +202,8 @@ Link to deployed site: [https://late-night-cafe-353782271257.herokuapp.com/](htt
 
 [Back to top](#)
 
+***
+
 ## Credits
 __Resources Used and Consulted__ 
 - [ChatGPT](https://openai.com/chatgpt/) used throughout for coding advice and inspiration.
@@ -203,7 +220,6 @@ __Media__
 <a href="https://www.freepik.com/free-photo/cup-coffee-table-front-street-with-city-lights-background_40970695.htm#fromView=search&page=1&position=39&uuid=64b1e9e8-e30f-4dc8-9008-dd118719555f">Image by vecstock on Freepik</a>
 Photo by Clem Onojeghuo on Unsplash 
 Photo by Alexander Gilbertson on Unsplash 
-
 
 __Special Thanks__
 - [Spencer Barriball](https://github.com/5pence/demodemo/blob/main/assets/js/script.js)
