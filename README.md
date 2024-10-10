@@ -204,7 +204,11 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
   - Allows personal experience for the user. Keeps unauthorized users away from items they shouldn't have access to.
 ![latte-night-cafe-creenshot 2024-08-14 140634](https://github.com/user-attachments/assets/ee34f3d0-f160-4552-b32f-def5622d853b)
 
-  
+- __Booking Form__
+  - Collects booking information from the user. Easy to fill in for the user, allowing them to reserve a specific table for specific timeslot (if free).
+
+![latte-night-cafe-create-a-booking-form](https://github.com/user-attachments/assets/f3277736-a8e5-4ba5-a8b6-24363a8c77d4)
+
 - __Sign In/Out Pages__
   - Easy sign up. Options to include social media integration in the future.
 ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
