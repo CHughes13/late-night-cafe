@@ -316,8 +316,12 @@ __Result:__ Pass
 ![latte-night-cafe-creenshot 2024-08-14 162657](https://github.com/user-attachments/assets/1c5863a8-eab5-4d07-92e8-ba3b23209447)  
 ![latte-night-cafe-creenshot 2024-08-14 162640](https://github.com/user-attachments/assets/4ef864e6-ab80-4b45-86da-0dea44f920ac)  
 
-- Website Optimization
-  - Still need to pass through [Google Lighthouse](TBA)
+- Website Optimization and Accessibility tested using Lighthouse via Chrome DevTools:
+  - __Desktop__  
+  ![latte-night-cafe-lighthouse-testing-desktop](https://github.com/user-attachments/assets/36a1c9e0-7a6c-43aa-9d34-62a45045f2c8)  
+  
+  - __Mobile__  
+![latte-night-cafe-lighthouse-testing-mobile](https://github.com/user-attachments/assets/b2be6b70-5641-486b-89ad-c748e43fe819)  
 
 [Back to top](#)
 
