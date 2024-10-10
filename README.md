@@ -18,6 +18,7 @@
   - [Validator Testing](#validator-testing)
   - [Bugs Fixed](#bugs-fixed)
 - [Setup and Running the Application](#setup-and-running-the-application)
+- [Deployment](#deployment)
 - [Credits](#credits)
 
 ## Introduction
@@ -54,7 +55,7 @@ The colours are warm and comforting. The main issue with the contrast check was 
 [Back to top](#)
 
 ### User Stories
-Please see project board.
+Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1).
 
 ## Initial Planning Stage - Wireframes
 
@@ -81,7 +82,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
   
 - __Sign In/Out Pages__
-- Easy sign up. Options to include social media itergration in the future.
+  - Easy sign up. Options to include social media itergration in the future.
   ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
 ![latte-night-cafe-creenshot 2024-08-14 141927](https://github.com/user-attachments/assets/78ad74a0-054e-44c6-8fc7-abd0649f8b6f)
 
@@ -118,7 +119,10 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
   - Form for registered users to leave a review of the cafe. These could then be displayed on the homepage as a carousel.
  
 - __Social Media Registration/Sign In Option__ 
-  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience.   
+  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience.
+ 
+- __Custom Error Screens__ 
+  - Currently Django custom error screens are being used for 404, 500, etc. More fun to have a personalise and branded error page and you can then direct the user back to the homepage.  
 
 [Back to top](#)
 
@@ -126,8 +130,14 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 ## Testing and Debugging
 
 Created test.py files and constant manual testing throughout.
+
+__Test:__ Create a booking when not logged in. __Expectation:__ User will be prompted to log in. __Result:__ Pass
 ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/11b59ef1-eb87-41f5-ab92-edfc9c193ce9)
+
+__Test:__ Create a booking for a date in the past. __Expectation:__ User will be prompted select another date. __Result:__ Pass
 ![latte-night-cafe-creenshot 2024-08-14 141647](https://github.com/user-attachments/assets/06f6113a-67f0-4e7a-80e1-1f3b18b283c2)
+
+__Test:__ Booking appears in user dashboard. __Expectation:__ Once booking is made and validated, the user will be redirected to their dashboard which shows all their bookings ever made. __Result:__ Pass
 ![latte-night-cafe-creenshot 2024-08-14 142847](https://github.com/user-attachments/assets/437db65e-752b-4f73-bdbb-52c98897c5d9)
 
 
@@ -173,10 +183,12 @@ Need to have nav items drop down.
 - Connected to the Code Institute PostGres Database
 - Connected to [Cloudinary](https://cloudinary.com/) (static file/assests host)
 
+Link to deployed site: [https://late-night-cafe-353782271257.herokuapp.com/](https://late-night-cafe-353782271257.herokuapp.com/)
+
 [Back to top](#)
 
 ## Credits
-__Resources Used and Consulted:__ 
+__Resources Used and Consulted__ 
 - [ChatGPT](https://openai.com/chatgpt/) used throughout for coding advice and inspiration.
 - [Blackbox AI](https://www.blackbox.ai/) used throughout for coding advice and inspiration.
 - [Font Awesome](https://fontawesome.com/) for the social media icons in footer.
@@ -186,15 +198,14 @@ __Resources Used and Consulted:__
 - [MDN web docs](https://developer.mozilla.org/) for helpful guides on all things coding.
 - [W3Schools](https://www.w3schools.com/) for helpful guides on all things coding.
 - [Bootstrap](https://getbootstrap.com/) for docs about Bootstrap.
-- Background image from WEBSITE.
 
-## Media
+__Media__
 <a href="https://www.freepik.com/free-photo/cup-coffee-table-front-street-with-city-lights-background_40970695.htm#fromView=search&page=1&position=39&uuid=64b1e9e8-e30f-4dc8-9008-dd118719555f">Image by vecstock on Freepik</a>
 Photo by Clem Onojeghuo on Unsplash 
 Photo by Alexander Gilbertson on Unsplash 
 
 
-__Special Thanks To:__ 
+__Special Thanks__
 - [Spencer Barriball](https://github.com/5pence/demodemo/blob/main/assets/js/script.js)
 - Code Institute's Subject Matter Expert Kevin
 - Code Institute's Coding Coach Martin
