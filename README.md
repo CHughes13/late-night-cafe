@@ -216,7 +216,8 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
 
 
 - __Responsive Design__ 
-  - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop. This project was designed with a mobile-first approach.
+  - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop. This project was designed with a mobile-first approach.  
+
 ![latte-night-cafe-creenshot 2024-08-14 143258](https://github.com/user-attachments/assets/6236ecad-6fff-43db-a27e-25566c634126)
 ![latte-night-cafe-creenshot 2024-08-14 143313](https://github.com/user-attachments/assets/42c1388a-a116-4761-8cce-579d30257f3c)
 
@@ -335,16 +336,38 @@ The social media icons were appearing, but the speech bubble icons either side o
 
 ## Setup and Running the Application
 
-1. Clone the repository to your local machine or download the HTML, CSS, and JavaScript files.
-2. Open the HTML file in a web browser to start the application.
-3. Sign up and create a booking
+1. Fork repository on GitHub.
+2. Clone the repository to your local machine or download the HTML, CSS, and JavaScript files.
+3. Open the HTML file in a web browser to start the application.
+4. Sign up and create a booking
 
 ## Deployment
-- Repository created in Github and updated in Gitpod
+- Create repository created in Github and update in Gitpod
 - Install Django framework and Python packages
-- Deployed using Heroku
-- Connected Secret Keys to config vars
-- Connected to the Code Institute PostGres Database
+  - Create requirements.txt file and add the following:
+```
+asgiref==3.8.1
+cloudinary==1.36.0
+crispy-bootstrap5==0.7
+dj-database-url==0.5.0
+dj3-cloudinary-storage==0.0.6
+Django==4.2.14
+django-allauth==0.57.2
+django-crispy-forms==2.3
+gunicorn==20.1.0
+oauthlib==3.2.2
+psycopg==3.2.1
+psycopg2==2.9.9
+PyJWT==2.9.0
+python3-openid==3.2.0
+requests-oauthlib==2.0.0
+sqlparse==0.5.1
+urllib3==1.26.19
+whitenoise==5.3.0
+```
+- Deploy using [Heroku](https://www.heroku.com/)
+- Connect Secret Keys to config vars
+- Connect to the Code Institute PostGres Database
 - Connected to [Cloudinary](https://cloudinary.com/) (static file/assests host)
 
 Link to deployed site: [https://late-night-cafe-353782271257.herokuapp.com/](https://late-night-cafe-353782271257.herokuapp.com/)
