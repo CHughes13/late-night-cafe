@@ -80,6 +80,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 ***
 
 ## Features
+I used the MoSCoW prioritisation method to determine which features were most important and a "must-have" in order to meet the user's needs and achieve a MVP in this initial sprint. 
 
 ### Existing Features
 - __Navbar changes depends on who is logged in/out__
@@ -89,7 +90,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
   
 - __Sign In/Out Pages__
   - Easy sign up. Options to include social media itergration in the future.
-  ![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
+![latte-night-cafe-creenshot 2024-08-14 142000](https://github.com/user-attachments/assets/4497f444-8348-4b99-bcf9-d7586b414cff)
 ![latte-night-cafe-creenshot 2024-08-14 141927](https://github.com/user-attachments/assets/78ad74a0-054e-44c6-8fc7-abd0649f8b6f)
 
 
@@ -109,26 +110,41 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
   - Features at the bottom of the page throughout (and has a matching colour theme with other elements on the site), this lets the user know they're still on the same webpage.
   - The footer is important as it encourages the user to interact and stay connected with Latte Night Cafe on other social media platforms.
 
+- __User Dashboard__ 
+  - Where the user can see all their own bookings in one place with full CRUD functionality (create, read, update, and delete) only for their bookings.
+  - Includes the option to sort bookings by date.
+![latte-night-cafe-user-dashboard](https://github.com/user-attachments/assets/cd16fee4-0fd4-4a5e-80c4-5f91429044a4)
+
+![latte-night-cafe-booking-update-1](https://github.com/user-attachments/assets/d5c953bd-b5be-4734-b78c-7c6928703fdf)
+
+![latte-night-cafe-booking-update-2](https://github.com/user-attachments/assets/7e46ec21-e154-4530-9fd4-ba585f837a31)
+
+
+- __Admin Dashboard__ 
+  - Where the admin can see all the bookings for the cafe in once place. Includes full CRUD functionality (create, read, update, and delete) of all bookings by anyone.
+  - Includes the option to sort bookings by date, user, and special requests.
+![latte-night-cafe-admin-dashboard](https://github.com/user-attachments/assets/0e0be682-0ad6-4be6-8a60-cc0bb558eba6)
+
 [Back to top](#)
 
 
 ### Features Left to Implement
+Using the MoSCoW method, it was determined that these features weren't essential to create a MVP but are more "should-have" and "could-have". Due to time constraintents these features were left out, but they would make great additions to the application in the future.
 
+- __About Page__ - Should Have
+  - A more in-depth intro about the cafe and its philosophy to build its brand identiy. Include images of the cafe, staff, food, and drink so future customers know what to expect. Could also include a "How to find us" map. This page would add significant value but at the moment the contact details in the footer cover this.
 
-- __About Page__ 
-  - A more in-depth intro about the cafe and its philosophy to build its brand identiy. Include images of the cafe, staff, food, and drink so future customers know what to expect. Could also include a "How to find us" map.
-
-- __Menu Page__ 
-  - A page listing the food and drink items available, as well as their cost. This allows potential customers to scope out the offerings of the Latte Night Cafe in advance and decide if it's the palce for them. Could display this information as a table, list, or PDF/image.
+- __Menu Page__ - Could Have
+  - A page listing the food and drink items available, as well as their cost. This allows potential customers to scope out the offerings of the Latte Night Cafe in advance and decide if it's the place for them. Could display this information as a table, list, or PDF/image.
  
-- __Reviews__ 
+- __Reviews__ - Could Have
   - Form for registered users to leave a review of the cafe. These could then be displayed on the homepage as a carousel.
  
-- __Social Media Registration/Sign In Option__ 
-  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience.
+- __Social Media Registration/Sign In Option__ - Won't Have (for now)
+  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience. At the moment using django's built-in sign up and admin works just fine. More for convienience than a necesaaity.
  
-- __Custom Error Screens__ 
-  - Currently Django custom error screens are being used for 404, 500, etc. More fun to have a personalise and branded error page and you can then direct the user back to the homepage.  
+- __Custom Error Screens__ - Won't Have (for now)
+  - Currently Django custom error screens are being used for 404, 500, etc. so this feature was not a priority in the first iteration of the project. However, when there is more time, it is definitely more fun to have a personalise and branded error page and you can then direct the user back to the homepage (better UX/UI).  
 
 [Back to top](#)
 
@@ -181,6 +197,14 @@ __Result:__ Pass
 - __Collapse Navbar when goes into mobile mode__ 
 Need to have nav items drop down.
 
+- __Some Font Awesome icons not appearing__ 
+The social media icons were appearing, but the speech bubble icons either side of the "Contact us:" text were not. After some investigation, it turns out that the version of Font Awesome that was linked to in the stylesheet was not the same one listed on the icon (different versions of icons have slightly different names and versions).  
+![latte-night-cafe-a-icon-not-showing-1](https://github.com/user-attachments/assets/8733f63c-f435-418e-a066-bd2ceec1ae3e)
+![latte-night-cafe-a-icon-not-showing-2](https://github.com/user-attachments/assets/9f4c0bb8-2199-4ba1-8431-7f4f10f796a5)
+![latte-night-cafe-a-icon-not-showing-3](https://github.com/user-attachments/assets/c401f7ca-0de9-4d92-b1dc-14219bc87a93)
+![latte-night-cafe-a-icon-not-showing-4](https://github.com/user-attachments/assets/194a277b-64e4-4454-9998-ee40495ee620)
+
+
 [Back to top](#)
 
 ***
@@ -228,8 +252,7 @@ __Special Thanks__
 - Code Institute's Coding Bootcamp Tutor Lewis
 - Code Institute's Cohort Facilitator David
 - Everyone in the April 2024 WW Bootcamp
-- Ian Stokes
-- Christopher Hughes
-- Sebastian Hughes
+- Ian Stokes for all the cups of tea
+- Christopher Hughes and Sebastian Hughes for technical support and advice
 
 [Back to top](#)
