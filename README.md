@@ -1,20 +1,20 @@
 # Latte Night Cafe
 ![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
 
-### Booking system for a late night cafe.
+### Booking system for a late night cafe
 
 ***
 
-## Table of Contents
+## Contents
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
 - [UX/UI](#uxui)
 - [Site Goals](#site-goals)
 - [User Stories](#user-stories)
-- [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
+- [Wireframes](#wireframes)
   - [Desktop](#desktop)
   - [Mobile](#mobile)
-- [Initial Planning Stage - Databases](#initial-planning-stage---databases)
+- [Databases](#databases)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Features Left to Implement](#features-left-to-implement)
@@ -58,9 +58,9 @@ The colours are warm and comforting. The main issue with the contrast check was 
 
 [Back to top](#)
 
-### User Stories
-Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1) for full details.  
-![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
+***  
+### User Stories  
+![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)  
 
 __As a user:__
 - I want to register an account so that I can make a booking and keep track of my past/future bookings.
@@ -90,9 +90,13 @@ __As a site admin:__
   - Add validators to the "Create a booking" page to ensure double bookings can't occur (table number and timeslots).
   - Clearly provide automatic feedback to the user so they know what went wrong and what to do next so they can successfully make a reservation.
 
+Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1) for full details.
 
+[Back to top](#)
 
-## Initial Planning Stage - Wireframes
+***  
+  
+## Wireframes
 
 Here are the initial wireframes for the Latte Night Cafe application (created using Balsamiq), along with screen shots of the initial design. These provide a visual outline of the planned layout and functionality.
 
@@ -110,7 +114,7 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 ***
 
-## Initial Planning Stage - Databases
+## Databases
 
 Using Miro, I created an entity relationship diagram with the following question in mind: "What information do I need when someone makes a reservation?"
 
@@ -214,6 +218,7 @@ This project was planned out using agile principles. Therefore, I used the MoSCo
   - Features at the bottom of the page throughout (and has a matching colour theme with other elements on the site), this lets the user know they're still on the same webpage.
   - The footer is important as it encourages the user to interact and stay connected with Latte Night Cafe on other social media platforms.
 
+
 - __User Dashboard__ 
   - Where the user can see all their own bookings in one place with full CRUD functionality (create, read, update, and delete) only for their bookings.
   - Includes the option to sort bookings by date.
@@ -256,7 +261,7 @@ Using the MoSCoW method, it was determined that these features weren't essential
 
 ## Testing and Debugging
 
-Created test.py files and constant manual testing throughout.
+Created test.py files and did constant manual testing throughout (both myself and outside testers).
 
 __Test:__ Create a booking when not logged in.  
 __Expectation:__ User will be prompted to log in.  
@@ -297,10 +302,10 @@ __Result:__ Pass
 [Back to top](#)
 
 ### Bugs Fixed
-- __Collapse Navbar when goes into mobile mode__ 
+- __Collapse Navbar when goes into mobile mode__   
 Navigation items should drop down.
 
-- __Some Font Awesome icons not appearing__ 
+- __Some Font Awesome icons not appearing__   
 The social media icons were appearing, but the speech bubble icons either side of the "Contact us:" text were not. After some investigation, it turns out that the version of Font Awesome that was linked to in the stylesheet was not the same one listed on the icon (different versions of icons have slightly different names and versions).  
 ![latte-night-cafe-a-icon-not-showing-1](https://github.com/user-attachments/assets/8733f63c-f435-418e-a066-bd2ceec1ae3e)
 ![latte-night-cafe-a-icon-not-showing-2](https://github.com/user-attachments/assets/9f4c0bb8-2199-4ba1-8431-7f4f10f796a5)
@@ -344,12 +349,10 @@ __Resources Used and Consulted__
 - [W3Schools](https://www.w3schools.com/) for helpful guides on all things coding.
 - [Bootstrap](https://getbootstrap.com/) for docs about Bootstrap.
 
-__Media__
+__Media__  
 <a href="https://www.freepik.com/free-photo/cup-coffee-table-front-street-with-city-lights-background_40970695.htm#fromView=search&page=1&position=39&uuid=64b1e9e8-e30f-4dc8-9008-dd118719555f">Image by vecstock on Freepik</a>
-Photo by Clem Onojeghuo on Unsplash 
-Photo by Alexander Gilbertson on Unsplash 
 
-__Special Thanks__
+__Special Thanks To__
 - [Spencer Barriball](https://github.com/5pence/demodemo/blob/main/assets/js/script.js)
 - Code Institute's Subject Matter Expert Kevin
 - Code Institute's Coding Coach Martin
