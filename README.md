@@ -1,6 +1,9 @@
 # Latte Night Cafe
 ![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)
 
+## A booking system for late night cafe with validators to ensure there are no double bookings.
+
+***
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,6 +14,7 @@
 - [Initial Planning Stage - Wireframes](#initial-planning-stage---wireframes)
   - [Desktop](#desktop)
   - [Mobile](#mobile)
+- [Initial Planning Stage - Database](#initial-planning-stage---databse)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Features Left to Implement](#features-left-to-implement)
@@ -42,8 +46,6 @@ This web application was created and built by Christina Hughes - [GitHub](https:
 - [Miro Board](https://miro.com/app/board/uXjVKrc3AA4=/) (digital interactive whiteboard)
 - [Github Project Board](https://github.com/users/CHughes13/projects/2)
 
-![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
-
 [Back to top](#)
 
 ***
@@ -59,7 +61,9 @@ The colours are warm and comforting. The main issue with the contrast check was 
 [Back to top](#)
 
 ### User Stories
-Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1).
+Please see [GitHub project board](https://github.com/users/CHughes13/projects/2/views/1) for full details.  
+![latte-night-cafe-creenshot 2024-08-14 162917](https://github.com/user-attachments/assets/a94a7ee3-7eec-4396-96ad-2aa1be35126b)
+
 
 ## Initial Planning Stage - Wireframes
 
@@ -79,8 +83,81 @@ Here are the initial wireframes for the Latte Night Cafe application (created us
 
 ***
 
+## Initial Planning Stage - Database
+
+Using Miro, I created an entity relationship diagram with the following question in mind: "What information do I need when someone makes a reservation?"
+
+**PK = Primary Key   |   FK = Foreign Key**     
+![latte-night-cafe-entity-relationship-diagram](https://github.com/user-attachments/assets/bb90172e-4c64-4e59-9ae3-c445aad33d67)  
+
+### Relationships
+- User to Booking - one-to-many relationship as one user can make multiple bookings.
+- CafeTable to Booking - one-to-many relationship as one table can be booked for different time slots.
+
+### Notes
+Initially I wanted to have a separate user data model, but as this is a predefined class in Django I decided to keep it simple and ended up leaving the user data model out for now and focus on achieving the MVP.
+
+For simplicity, I ended up creating 3 table choices for each timeslot (from 6pm to 6am):
+
+```python
+from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone # Pulls in default timezone info which is Europe/London
+
+# Model for making a booking for an available table
+class Booking(models.Model):
+    
+    TABLE_CHOICES = [
+        ("1", "Table 1"),
+        ("2", "Table 2"),
+        ("3", "Table 3"),
+    ]
+
+    TIMESLOT_CHOICES = [ # Each timeslot is 1 hour
+        ("18:00", "6 PM"),
+        ("19:00", "7 PM"),
+        ("20:00", "8 PM"),
+        ("21:00", "9 PM"),
+        ("22:00", "10 PM"),
+        ("23:00", "11 PM"),
+        ("00:00", "12 AM"),
+        ("01:00", "1 AM"),
+        ("02:00", "2 AM"),
+        ("03:00", "3 AM"),
+        ("04:00", "4 AM"),
+        ("05:00", "5 AM"),
+    ]
+
+    NUM_GUESTS_CHOICES = [(i, i) for i in range(1, 5)] # Limits number of guests from min 1 to max 4. Futureproofing in case more tables are added with varying seat numbers.
+
+    booking_id = models.AutoField(primary_key = True) # Unique booking id
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings') # Relationship to User model. If user is deleted, booking will be deleted too.
+    table_booked = models.CharField(choices=TABLE_CHOICES, default="1") # Lists choice of tables in cafe.
+    booking_date = models.DateField(null = False, blank = False) # Date when customer wants to book table - Mon-Sun. Date & time separate to allow for more flexibility for users to modify their booking. Field needs a value input. 
+    booking_time = models.CharField(max_length = 6, choices=TIMESLOT_CHOICES, default="6 PM") # Lists bookable timeslots (1 hour slots from 6pm-6am).
+    num_of_guests = models.IntegerField(choices=NUM_GUESTS_CHOICES, default=1) # Default number of guests is set to 1. Field needs a value input. 
+    special_requests = models.TextField(null = True, blank = True) # Textfield so customers can add allergy info, birthday treats, etc. Optional field.
+    booking_created_at = models.DateTimeField(auto_now_add = True) # Sets timestamp only when the record is created
+    booking_updated_at = models.DateTimeField(auto_now = True) # Updates timestamp every time the record is saved
+
+    class Meta:
+        verbose_name = "Booking"
+        verbose_name_plural = "Bookings"
+        ordering = ["booking_date", "booking_time", "table_booked"] # Shows bookings in chronological order (by date, then time, then table number)
+        unique_together = ["booking_date", "booking_time", "table_booked"] # Ensures that the same table can't be booked on the same date/time
+
+    def __str__(self):
+        return f"Booking for {self.user} ({self.booking_id}) at {self.table_booked} on {self.booking_date} at {self.booking_time} for {self.num_of_guests}." # Method returns a string summarising a table booking
+
+```
+
+[Back to top](#)
+
+***
+
+
 ## Features
-I used the MoSCoW prioritisation method to determine which features were most important and a "must-have" in order to meet the user's needs and achieve a MVP in this initial sprint. 
+This project was planned out using agile principles. Therefore, I used the MoSCoW prioritisation method to determine which features were most important and a "must-have" in order to meet the user's needs and achieve a MVP in this initial sprint. 
 
 ### Existing Features
 - __Navbar changes depends on who is logged in/out__
@@ -99,7 +176,7 @@ I used the MoSCoW prioritisation method to determine which features were most im
 
 
 - __Responsive Design__ 
-  - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop.
+  - Responsive design for compatibility with various devices and screen sizes, from mobile to desktop. This project was designed with a mobile-first approach.
 ![latte-night-cafe-creenshot 2024-08-14 143258](https://github.com/user-attachments/assets/6236ecad-6fff-43db-a27e-25566c634126)
 ![latte-night-cafe-creenshot 2024-08-14 143313](https://github.com/user-attachments/assets/42c1388a-a116-4761-8cce-579d30257f3c)
 
@@ -141,7 +218,7 @@ Using the MoSCoW method, it was determined that these features weren't essential
   - Form for registered users to leave a review of the cafe. These could then be displayed on the homepage as a carousel.
  
 - __Social Media Registration/Sign In Option__ - Won't Have (for now)
-  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. Would make for a better user experience. At the moment using django's built-in sign up and admin works just fine. More for convienience than a necesaaity.
+  - Offer the user the chance to register/sign into the website using one of their social media accounts rather than having to create and remember a new account and password. More for convienience than a necesaaity, but would make for a better user experience. At the moment using django's built-in sign up and admin works just fine. 
  
 - __Custom Error Screens__ - Won't Have (for now)
   - Currently Django custom error screens are being used for 404, 500, etc. so this feature was not a priority in the first iteration of the project. However, when there is more time, it is definitely more fun to have a personalise and branded error page and you can then direct the user back to the homepage (better UX/UI).  
@@ -181,12 +258,11 @@ __Result:__ Pass
 ![latte-night-cafe-creenshot 2024-08-14 162239](https://github.com/user-attachments/assets/0f7c62f8-7253-4d13-a372-39fe7b02c3e6)
 
 - CI Linter
-![latte-night-cafe-creenshot 2024-08-14 162627](https://github.com/user-attachments/assets/ae32c37d-80e7-42aa-802d-87bda868b8f7)
-![latte-night-cafe-creenshot 2024-08-14 162744](https://github.com/user-attachments/assets/3ad64a17-a7e8-4e02-ad0e-9e740158ed2c)
-
-![latte-night-cafe-creenshot 2024-08-14 162722](https://github.com/user-attachments/assets/4652a315-4a39-47c3-a331-e3ae4c79c300)
-![latte-night-cafe-creenshot 2024-08-14 162657](https://github.com/user-attachments/assets/1c5863a8-eab5-4d07-92e8-ba3b23209447)
-![latte-night-cafe-creenshot 2024-08-14 162640](https://github.com/user-attachments/assets/4ef864e6-ab80-4b45-86da-0dea44f920ac)
+![latte-night-cafe-creenshot 2024-08-14 162627](https://github.com/user-attachments/assets/ae32c37d-80e7-42aa-802d-87bda868b8f7)  
+![latte-night-cafe-creenshot 2024-08-14 162744](https://github.com/user-attachments/assets/3ad64a17-a7e8-4e02-ad0e-9e740158ed2c)  
+![latte-night-cafe-creenshot 2024-08-14 162722](https://github.com/user-attachments/assets/4652a315-4a39-47c3-a331-e3ae4c79c300)  
+![latte-night-cafe-creenshot 2024-08-14 162657](https://github.com/user-attachments/assets/1c5863a8-eab5-4d07-92e8-ba3b23209447)  
+![latte-night-cafe-creenshot 2024-08-14 162640](https://github.com/user-attachments/assets/4ef864e6-ab80-4b45-86da-0dea44f920ac)  
 
 - Website Optimization
   - Still need to pass through [Google Lighthouse](TBA)
@@ -252,7 +328,7 @@ __Special Thanks__
 - Code Institute's Coding Bootcamp Tutor Lewis
 - Code Institute's Cohort Facilitator David
 - Everyone in the April 2024 WW Bootcamp
-- Ian Stokes for all the cups of tea
-- Christopher Hughes and Sebastian Hughes for technical support and advice
+- Ian Stokes for all the cups of tea and manual testing
+- Christopher Hughes and Sebastian Hughes for technical support, advice, and manual testing
 
 [Back to top](#)
