@@ -1,5 +1,6 @@
-# Latte Night Cafe  
-### Booking system for a late night cafe  
+# [Latte Night Cafe](https://late-night-cafe-353782271257.herokuapp.com/)  
+### Booking system for a late night cafe
+### Deployed link: [https://late-night-cafe-353782271257.herokuapp.com/](https://late-night-cafe-353782271257.herokuapp.com/)
 ![latte-night-cafe-homepage](https://github.com/user-attachments/assets/27505868-c322-4143-a2f2-5e075b777417)  
 
 
